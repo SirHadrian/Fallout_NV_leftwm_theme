@@ -25,6 +25,9 @@ if [ -x "$(command -v feh)" ]; then
   feh --bg-scale $SCRIPTPATH/background.jpg
 fi
 
+# Pywal
+# -R restores the last colorscheme that was in use.
+wal -R
 
 index=0
 monitors="$(polybar -m | sed s/:.*//)"
