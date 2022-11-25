@@ -50,6 +50,7 @@
         (command: Execute, value: "amixer -q set Master 5%-", modifier: [], key: "XF86XK_AudioLowerVolume"),
         (command: Execute, value: "amixer -q set Master 5%+", modifier: [], key: "XF86XK_AudioRaiseVolume"),
         (command: Execute, value: "light -S 0", modifier: ["modkey", "Shift"], key: "0"),
+        (command: Execute, value: "light -S 20", modifier: ["modkey", "Shift"], key: "2"),
         (command: Execute, value: "light -S 100", modifier: ["modkey", "Shift"], key: "9"),
         (command: Execute, value: "light -S 50", modifier: ["modkey", "Shift"], key: "m"),
         (command: Execute, value: "light -A 10", modifier: [], key: "XF86XK_MonBrightnessUp"),
