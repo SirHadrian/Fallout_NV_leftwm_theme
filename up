@@ -40,3 +40,7 @@ do
   let index=indextemp
 done
 
+
+# User programs
+optimus-manager-qt &
+unclutter &
