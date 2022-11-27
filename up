@@ -17,9 +17,6 @@ if [ -x "$(command -v feh)" ]; then
   feh --bg-scale $SCRIPTPATH/background.jpg
 fi
 
-# Start compositor
-picom --config ~/.config/leftwm/themes/fallout_new_vegas-leftwm-theme/configs/picom.conf &
-
 # Pywal
 # -R restores the last colorscheme that was in use.
 wal -R
@@ -37,6 +34,8 @@ done
 
 
 # User programs
+# Start compositor
+picom &
 optimus-manager-qt &
 unclutter &
 
