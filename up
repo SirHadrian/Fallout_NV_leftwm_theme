@@ -35,7 +35,7 @@ done
 
 # User programs
 # Start compositor
-picom &
+picom --config ~/.config/leftwm/themes/fallout_new_vegas-leftwm-theme/configs/picom.conf &
 optimus-manager-qt &
 unclutter &
 
