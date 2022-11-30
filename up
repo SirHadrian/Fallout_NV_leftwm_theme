@@ -17,10 +17,6 @@ if [ -x "$(command -v feh)" ]; then
   feh --bg-scale $SCRIPTPATH/background.jpg
 fi
 
-# Pywal
-# -R restores the last colorscheme that was in use.
-wal -R
-
 index=0
 monitors="$(polybar -m | sed s/:.*//)"
 leftwm-state -q -n -t $SCRIPTPATH/sizes.liquid | sed -r '/^\s*$/d' | while read -r width x y
@@ -33,9 +29,5 @@ do
 done
 
 
-# User programs
-# Start compositor
-picom --config ~/.config/leftwm/themes/fallout_new_vegas-leftwm-theme/configs/picom.conf &
-optimus-manager-qt &
-unclutter &
-
+# Load user programs
+source ./user

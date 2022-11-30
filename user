@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+# Pywal
+# -R restores the last colorscheme that was in use.
+wal -R
+
+# User programs
+# Start compositor
+picom --config ~/.config/leftwm/themes/fallout_new_vegas-leftwm-theme/configs/picom.conf &
+optimus-manager-qt &
+unclutter &
