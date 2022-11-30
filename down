@@ -9,7 +9,4 @@ fi
 
 leftwm-command "UnloadTheme"
 
-pkill picom
-pkill polybar
-pkill optimus-manager-qt
-pkill unclutter
+source ./user_down

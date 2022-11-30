@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+
+pkill picom
+pkill polybar
+pkill optimus-manager-qt
+pkill unclutter
