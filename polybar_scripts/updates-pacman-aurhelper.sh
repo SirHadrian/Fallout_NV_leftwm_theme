@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/bash
 
 run() {
 	if ! updates_arch=$(checkupdates 2>/dev/null | wc -l); then
