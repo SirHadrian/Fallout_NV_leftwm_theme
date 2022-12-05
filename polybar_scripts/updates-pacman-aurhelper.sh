@@ -27,6 +27,12 @@ run() {
 update_system() {
 	# Use aur helper
 	paru -Syu
+	# After update
+	echo "=========================================="
+	echo "|           Update Completed!            |"
+	echo "=========================================="
+	sleep 20
+	# Polybar module will update in min 20 minutes
 }
 
 click() {
