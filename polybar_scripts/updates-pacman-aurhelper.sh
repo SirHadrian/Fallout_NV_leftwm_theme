@@ -31,7 +31,7 @@ update_system() {
 	echo "=========================================="
 	echo "|           Update Completed!            |"
 	echo "=========================================="
-	sleep 20
+	read -n 1 -s -r -p "Press any key to close"
 	# Polybar module will update in min 20 minutes
 }
 
