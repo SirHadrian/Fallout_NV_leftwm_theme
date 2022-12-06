@@ -1,3 +1,5 @@
 #!/usr/bin/env bash
 
-alacritty -e ~/.config/leftwm/themes/fallout_new_vegas-leftwm-theme/polybar_scripts/updates-pacman-aurhelper.sh --click
+SCRIPTPATH="$(cd "$(dirname "$0")" || exit && pwd -P)"
+
+alacritty -e "$SCRIPTPATH"/polybar_scripts/updates-pacman-aurhelper.sh --click
