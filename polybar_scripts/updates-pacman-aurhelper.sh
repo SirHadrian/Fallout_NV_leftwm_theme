@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 
 run() {
-	sleep 5
+	sleep 2
 	if ! updates_arch=$(checkupdates 2>/dev/null | wc -l); then
 		updates_arch=0
 	fi
@@ -28,9 +28,10 @@ update_system() {
 	# Use aur helper
 	paru -Syu
 	# After update
-	echo "=========================================="
-	echo "|           Update Completed!            |"
-	echo "=========================================="
+	printf "\n"
+	printf "==========================================\n"
+	printf "|           Update Completed!            |\n"
+	printf "==========================================\n"
 	read -n 1 -s -r -p "Press any key to close"
 	# Polybar module will update in min 20 minutes
 }
