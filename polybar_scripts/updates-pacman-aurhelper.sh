@@ -33,7 +33,7 @@ update_system() {
 	printf "|           Update Completed!            |\n"
 	printf "==========================================\n"
 	read -n 1 -s -r -p "Press any key to close"
-	# Polybar module will update in min 20 minutes
+	# Polybar module will update in minim 1 hour
 }
 
 click() {
