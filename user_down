@@ -6,7 +6,7 @@ declare -a end_programs=(
 	"picom"
 	"optimus-manager-qt"
 	"unclutter"
-	"greenclip daemon"
+	"greenclip"
 )
 
 for item in "${end_programs[@]}"; do
