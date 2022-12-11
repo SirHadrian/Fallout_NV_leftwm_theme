@@ -4,9 +4,17 @@
 # -R restores the last colorscheme that was in use.
 wal -R
 
-# User programs
-# Start compositor
-picom --animations --experimental-backend --config "$SCRIPTPATH"/configs/picom.conf &
-optimus-manager-qt &
-unclutter &
-greenclip daemon &
+# Start user programs
+declare -a launch_programs=(
+	# Compositor
+	"picom --animations --experimental-backend --config '$SCRIPTPATH'/configs/picom.conf"
+	"optimus-manager-qt"
+	"unclutter"
+	"greenclip daemon"
+)
+
+for item in "${launch_programs[@]}"; do
+	if ! pgrep -u $UID -f -x "$item" &>/dev/null; then
+		"$item" &>/dev/null &
+	fi
+done
