@@ -7,6 +7,7 @@ declare -a end_programs=(
 	"optimus-manager-qt"
 	"unclutter"
 	"greenclip"
+	"dunst"
 )
 
 for item in "${end_programs[@]}"; do
