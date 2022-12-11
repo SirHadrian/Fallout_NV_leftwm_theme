@@ -21,12 +21,4 @@ fi
 source "$SCRIPTPATH"/user_up
 
 # Start polybar
-index=0
-monitors="$(polybar -m | sed s/:.*//)"
-leftwm-state -q -n -t "$SCRIPTPATH"/sizes.liquid | sed -r '/^\s*$/d' | while read -r width x _y; do
-	((indextemp = index + 1))
-	monitor=$(sed "$indextemp!d" <<<"$monitors")
-	barname="mainbar$index"
-	monitor=$monitor offset=$x width=$width polybar -c "$SCRIPTPATH"/polybar.config $barname &>/dev/null &
-	((index = indextemp))
-done
+source "$SCRIPTPATH"/polybar_launcher.sh
