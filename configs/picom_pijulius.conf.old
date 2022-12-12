@@ -109,7 +109,7 @@ inactive-opacity = 1
 # frame-opacity = 1.0
 frame-opacity = 0.7;
 
-# Let inactive opacity set by -i override the '_NET_WM_WINDOW_OPACITY' values of windows.
+# Let inactive opacity set by -i override the '_NET_WM_OPACITY' values of windows.
 # inactive-opacity-override = true
 inactive-opacity-override = false;
 
@@ -143,7 +143,7 @@ focus-exclude = [ "class_g = 'Cairo-clock'" ];
 # Sets the radius of rounded window corners. When > 0, the compositor will
 # round the corners of windows. Does not interact well with
 # `transparent-clipping`.
-corner-radius = 0
+corner-radius = 12
 
 # Exclude conditions for rounded corners.
 rounded-corners-exclude = [
@@ -203,9 +203,6 @@ blur-background-exclude = [
 #       General Settings        #
 #################################
 
-# Enable remote control via D-Bus. See the man page for more details.
-# dbus = true
-
 # Daemonize process. Fork to background after initialization. Causes issues with certain (badly-written) drivers.
 # daemon = false
 
@@ -238,11 +235,17 @@ mark-ovredir-focused = true;
 # detect-rounded-corners = false
 detect-rounded-corners = true;
 
-# Detect '_NET_WM_WINDOW_OPACITY' on client windows, useful for window managers
-# not passing '_NET_WM_WINDOW_OPACITY' of client windows to frame windows.
+# Detect '_NET_WM_OPACITY' on client windows, useful for window managers
+# not passing '_NET_WM_OPACITY' of client windows to frame windows.
 #
 # detect-client-opacity = false
 detect-client-opacity = true;
+
+# Specify refresh rate of the screen. If not specified or 0, picom will
+# try detecting this with X RandR extension.
+#
+# refresh-rate = 60
+refresh-rate = 0;
 
 # Use EWMH '_NET_ACTIVE_WINDOW' to determine currently focused window,
 # rather than listening to 'FocusIn'/'FocusOut' event. Might have more accuracy,
@@ -269,11 +272,11 @@ detect-client-opacity = true;
 detect-transient = true;
 
 # Use 'WM_CLIENT_LEADER' to group windows, and consider windows in the same
-# group focused at the same time. This usually means windows from the same application
-# will be considered focused or unfocused at the same time.
-# 'WM_TRANSIENT_FOR' has higher priority if detect-transient is enabled, too.
+# group focused at the same time. 'WM_TRANSIENT_FOR' has higher priority if
+# detect-transient is enabled, too.
 #
 # detect-client-leader = false
+detect-client-leader = true;
 
 # Resize damaged region by a specific number of pixels.
 # A positive value enlarges it while a negative one shrinks it.
@@ -321,17 +324,11 @@ use-damage = true;
 #
 # xrender-sync-fence = false
 
-# GLX backend: Use specified GLSL fragment shader for rendering window
-# contents. Read the man page for a detailed explanation of the interface.
+# GLX backend: Use specified GLSL fragment shader for rendering window contents.
+# See `compton-default-fshader-win.glsl` and `compton-fake-transparency-fshader-win.glsl`
+# in the source tree for examples.
 #
-# window-shader-fg = "default"
-
-# Use rules to set per-window shaders. Syntax is SHADER_PATH:PATTERN, similar
-# to opacity-rule. SHADER_PATH can be "default". This overrides window-shader-fg.
-#
-# window-shader-fg-rule = [
-#   "my_shader.frag:window_type != 'dock'"
-# ]
+# glx-fshader-win = ""
 
 # Force all windows to be painted with blending. Useful if you
 # have a glx-fshader-win that could turn opaque pixels transparent.
