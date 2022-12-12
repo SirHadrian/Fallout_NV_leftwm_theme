@@ -26,6 +26,7 @@ declare -a dependencies=(
 	"feh"
 	"wal"
 	"cmus"
+	"scrot"
 )
 
 printf "\n${BWhite}%s" "================================"
