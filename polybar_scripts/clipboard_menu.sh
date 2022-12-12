@@ -10,8 +10,8 @@ POSITION=3
 #y-offset
 YOFF=50
 #x-offset
-XOFF=-10
+XOFF=-80
 #font
 FONT="JetBrainsMono Nerd Font 14"
 
-rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}' -config "$SCRIPTPATH"/../configs/config.rasi -location "$POSITION" -yoffset "$YOFF" -xoffset "$XOFF" -font "$FONT"
+rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}' -config "$SCRIPTPATH"/../configs/clipboard_config.rasi -location "$POSITION" -yoffset "$YOFF" -xoffset "$XOFF" -font "$FONT"
