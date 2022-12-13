@@ -161,7 +161,7 @@
     #   %n  progress value if set without any extra characters
     #   %%  Literal %
     # Markup is allowed
-    format = "<b>%s</b>\n%b"
+    format = "%s\n\n<b>%b</b>"
 
     # Alignment of message text.
     # Possible values are "left", "center" and "right".
@@ -248,7 +248,7 @@
     # corners.
     # The radius will be automatically lowered if it exceeds half of the
     # notification height to avoid clipping text and/or icons.
-    corner_radius = 12
+    corner_radius = 8
 
     # Ignore the dbus closeNotification message.
     # Useful to enforce the timeout set by dunst configuration. Without this
@@ -313,14 +313,14 @@
     # Otherwise the "#" and following would be interpreted as a comment.
     background = "#0E0E07"
     foreground = "#dcc1b0"
-    timeout = 5
+    timeout = 4
     # Icon for notifications with low urgency, uncomment to enable
     #default_icon = /path/to/icon
 
 [urgency_normal]
     background = "#0E0E07"
     foreground = "#dcc1b0"
-    timeout = 5
+    timeout = 4
     # Icon for notifications with normal urgency, uncomment to enable
     #default_icon = /path/to/icon
 
