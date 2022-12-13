@@ -9,15 +9,15 @@ SCRIPTDIR=$(cd "$(dirname "$0")" || exit && pwd -P)
 # 1 2 3
 # 8 0 4
 # 7 6 5
-POSITION=3
+POSITION=2
 #y-offset
 YOFF=50
 #x-offset
-XOFF=-10
+XOFF=355
 #fields to be displayed
 FIELDS=SSID,SECURITY,BARS
 #font
-FONT="JetBrainsMono Nerd Font 14"
+FONT="JetBrainsMono Nerd Font 10"
 
 LIST=$(nmcli --fields "$FIELDS" device wifi list | sed '/^--/d')
 # For some reason rofi always approximates character width 2 short... hmmm
@@ -31,7 +31,7 @@ CONSTATE=$(nmcli -fields WIFI g)
 
 CURRSSID=$(LANGUAGE=C nmcli -t -f active,ssid dev wifi | awk -F: '$1 ~ /^yes/ {print $2}')
 
-if [[ ! -z $CURRSSID ]]; then
+if [[ -n $CURRSSID ]]; then
 	HIGHLINE=$(echo "$(echo "$LIST" | awk -F "[  ]{2,}" '{print $1}' | grep -Fxn -m 1 "$CURRSSID" | awk -F ":" '{print $1}') + 1" | bc)
 fi
 
@@ -49,7 +49,7 @@ elif [[ "$CONSTATE" =~ "disabled" ]]; then
 	TOGGLE="toggle on"
 fi
 
-CHENTRY=$(echo -e "$TOGGLE\nmanual\n$LIST" | uniq -u | rofi -dmenu -p "Wi-Fi SSID: " -config "$SCRIPTDIR"/../configs/config.rasi -lines "$LINENUM" -a "$HIGHLINE" -location "$POSITION" -yoffset "$YOFF" -xoffset "$XOFF" -font "$FONT" -width -"$RWIDTH")
+CHENTRY=$(echo -e "$TOGGLE\nmanual\n$LIST" | uniq -u | rofi -dmenu -p "Wi-Fi SSID: " -config "$SCRIPTDIR"/../configs/wifi_config.rasi -lines "$LINENUM" -a "$HIGHLINE" -location "$POSITION" -yoffset "$YOFF" -xoffset "$XOFF" -font "$FONT" -width -"$RWIDTH")
 #echo "$CHENTRY"
 CHSSID=$(echo "$CHENTRY" | sed 's/\s\{2,\}/\|/g' | awk -F "|" '{print $1}')
 #echo "$CHSSID"
@@ -57,7 +57,7 @@ CHSSID=$(echo "$CHENTRY" | sed 's/\s\{2,\}/\|/g' | awk -F "|" '{print $1}')
 # If the user inputs "manual" as their SSID in the start window, it will bring them to this screen
 if [ "$CHENTRY" = "manual" ]; then
 	# Manual entry of the SSID and password (if appplicable)
-	MSSID=$(echo "enter the SSID of the network (SSID,password)" | rofi -dmenu -p "Manual Entry: " -config "$SCRIPTDIR"/../configs/config.rasi -font "$FONT" -lines 1)
+	MSSID=$(echo "enter the SSID of the network (SSID,password)" | rofi -dmenu -p "Manual Entry: " -config "$SCRIPTDIR"/../configs/wifi_config.rasi -font "$FONT" -lines 1)
 	# Separating the password from the entered string
 	MPASS=$(echo "$MSSID" | awk -F "," '{print $2}')
 
@@ -89,7 +89,7 @@ else
 		nmcli con up "$CHSSID"
 	else
 		if [[ "$CHENTRY" =~ "WPA2" ]] || [[ "$CHENTRY" =~ "WEP" ]]; then
-			WIFIPASS=$(echo "if connection is stored, hit enter" | rofi -dmenu -p "password: " -config "$SCRIPTDIR"/../configs/config.rasi -lines 1 -font "$FONT")
+			WIFIPASS=$(echo "if connection is stored, hit enter" | rofi -dmenu -p "password: " -config "$SCRIPTDIR"/../configs/wifi_config.rasi -lines 1 -font "$FONT")
 		fi
 		nmcli dev wifi con "$CHSSID" password "$WIFIPASS"
 	fi
