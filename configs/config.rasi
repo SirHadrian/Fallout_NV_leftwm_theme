@@ -81,7 +81,7 @@ configuration {
 
 #element {
     border: 0;
-    padding: 1px;
+    padding: 0.5ch;
 }
 
 #element.normal.normal {
