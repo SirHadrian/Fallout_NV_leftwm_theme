@@ -6,6 +6,11 @@ prepend_zero() {
 
 artist=$(echo -n "$(cmus-remote -C status | grep "tag artist" | cut -c 12-)")
 
+if [[ -z "$artist" ]]; then
+	echo -n "$(cmus-remote -C status | grep file | cut -c 6-)"
+	exit
+fi
+
 if [[ $artist = *[!\ ]* ]]; then
 	song=$(echo -n "$(cmus-remote -C status | grep title | cut -c 11-)")
 	position=$(cmus-remote -C status | grep position | cut -c 10-)
