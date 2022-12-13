@@ -27,6 +27,7 @@ declare -a dependencies=(
 	"wal"
 	"cmus"
 	"scrot"
+	"ffmpeg"
 )
 
 printf "\n${BWhite}%s" "================================"
