@@ -9,8 +9,8 @@ COVERSDIR="$HOME/Music/covers"
 
 [[ -d ${COVERSDIR} ]] || mkdir -p "${COVERSDIR}"
 
-if ! [[ -f "${COVERSDIR}/${FILENAME}" ]]; then
-	ffmpeg -i "${CURRENTLY_PLAYING}" -an -c:v copy "${COVERSDIR}/${FILENAME}.jpg" &>/dev/null
+if ! [[ -e "${COVERSDIR}/${FILENAME}.jpg" ]]; then
+	ffmpeg -i "${CURRENTLY_PLAYING}" -an -c:v copy "${COVERSDIR}/${FILENAME}.jpg" &>/dev/null || exit
 fi
 
 sleep 1
