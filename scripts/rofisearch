@@ -23,10 +23,10 @@ gen_list() {
 }
 
 main() {
-	site=$(gen_list | rofi -dmenu -config "$SCRIPTDIR"/../configs/config.rasi -matching regex -p "Search on")
+	site=$(gen_list | rofi -dmenu -config "$SCRIPTDIR"/config.rasi -matching regex -p "Search on")
 
 	if [[ -n "$site" ]]; then
-		query=$(rofi -dmenu -config "$SCRIPTDIR"/../configs/config.rasi -mathcing regex -p "$site")
+		query=$(rofi -dmenu -config "$SCRIPTDIR"/config.rasi -mathcing regex -p "$site")
 
 		if [[ -n "$query" ]]; then
 			url=${URLS[$site]}$query

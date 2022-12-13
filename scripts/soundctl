@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+while [[ -n "$1" ]]; do
+	case "$1" in
+	-s | --set)
+		shift
+		amixer -q -D pulse set Master "$1"
+		;;
+	*)
+		exit 1
+		;;
+	esac
+	shift
+done
+
+dunstify --icon=audio-volume-low -h string:x-canonical-private-synchronous:volume "       Volume        " -h int:value:"$(amixer -D pulse sget Master | awk -F"[][]" '/Left:/ { print $2 }')"

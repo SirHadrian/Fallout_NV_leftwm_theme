@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+while [[ -n "$1" ]]; do
+	case "$1" in
+	-s | --set)
+		shift
+		light -S "$1"
+		;;
+	-i | --inc)
+		shift
+		light -A "$1"
+		;;
+	-d | --dec)
+		shift
+		light -U "$1"
+		;;
+	*)
+		exit 1
+		;;
+	esac
+	shift
+done
+
+dunstify --icon=audio-volume-low -h string:x-canonical-private-synchronous:brightness "       Brightness        " -h int:value:"$(light -G)"

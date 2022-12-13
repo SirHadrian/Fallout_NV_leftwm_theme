@@ -1,7 +1,10 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-timestamp="$(date +%d.%m.%Y"_"%H:%M:%S )"
+timestamp="$(date +%d.%m.%Y"_"%H:%M:%S)"
 targetbase="$HOME/Pictures/screenshots"
-mkdir -p "$targetbase"
-[ -d "$targetbase" ] || exit 1
-scrot --silent "$targetbase/$timestamp.png"
+mkdir -p "${targetbase}"
+[[ -d "${targetbase}" ]] || exit 1
+scrot --silent "${targetbase}/${timestamp}.png"
+
+sleep 1
+dunstify --raw_icon="${targetbase}/${timestamp}.png" "Saved: " "Pictures/screenshots/${timestamp}.png"
