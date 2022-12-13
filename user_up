@@ -10,7 +10,7 @@ declare -a launch_programs=(
 	"optimus-manager-qt"
 	"unclutter"
 	"greenclip daemon"
-	"dunst"
+	"dunst -conf $SCRIPTPATH/configs/dunstrc"
 )
 
 for item in "${launch_programs[@]}"; do
