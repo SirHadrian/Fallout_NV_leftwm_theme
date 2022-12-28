@@ -15,6 +15,7 @@ declare -a dependencies=(
 	"dunst"
 	"picom"
 	"unclutter"
+	"optimus-manager"
 	"optimus-manager-qt"
 	"amixer"
 	"light"
@@ -28,6 +29,12 @@ declare -a dependencies=(
 	"cmus"
 	"scrot"
 	"ffmpeg"
+	"redshift"
+	"rg"
+	"exa"
+	"procs"
+	"dust"
+	"tree"
 )
 
 printf "\n${BWhite}%s" "================================"
