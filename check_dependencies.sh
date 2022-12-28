@@ -36,6 +36,7 @@ declare -a dependencies=(
 	"dust"
 	"tree"
 	"bat"
+	"pamixer"
 )
 
 printf "\n${BWhite}%s" "================================"
