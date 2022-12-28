@@ -35,6 +35,7 @@ declare -a dependencies=(
 	"procs"
 	"dust"
 	"tree"
+	"bat"
 )
 
 printf "\n${BWhite}%s" "================================"
