@@ -37,6 +37,8 @@ declare -a dependencies=(
 	"tree"
 	"bat"
 	"pamixer"
+	"qt5ct"
+	"lxappearance"
 )
 
 printf "\n${BWhite}%s" "================================"
