@@ -1,7 +1,8 @@
-#!/usr/bin/env bash
+#!/usr/bin/bash
 
 bluetooth_check() {
-	if [ "$(systemctl is-active "bluetooth.service")" = "active" ]; then
+	sleep 2
+	if [[ "$(systemctl is-active "bluetooth.service")" =~ "active" ]]; then
 
 		devices_paired=$(bluetoothctl devices Paired | grep Device | cut -d ' ' -f 2)
 		counter=0
@@ -10,15 +11,15 @@ bluetooth_check() {
 			device_info=$(bluetoothctl info "$device")
 
 			if echo "$device_info" | grep -q "Connected: yes"; then
-				device_alias=$(echo "$device_info" | grep "Alias" | cut -d ' ' -f 2-)
+				device_alias=$(echo "$device_info" | grep "Alias" | cut -d ' ' -f 2)
 
-				if [ $counter -gt 0 ]; then
+				if [[ $counter -gt 0 ]]; then
 					printf " | %s " "$device_alias"
 				else
 					printf "  %s " "$device_alias"
 				fi
 
-				counter=$((counter + 1))
+				((counter = counter + 1))
 			else
 				printf "  "
 			fi
