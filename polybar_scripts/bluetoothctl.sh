@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 
 bluetooth_check() {
-	sleep 2
+	sleep 5
 	if [[ "$(systemctl is-active "bluetooth.service")" =~ "active" ]]; then
 
 		devices_paired=$(bluetoothctl devices Paired | grep Device | cut -d ' ' -f 2)

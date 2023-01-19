@@ -37,9 +37,11 @@ update_system() {
 }
 
 click() {
+	# print updates
+	checkupdates
 	# Ask for confirmation
-	read -rp "Update the system? (Y/n)" answer
-	do_update=${answer:-Y}
+	read -rp "Update the system? (y/N)" answer
+	do_update=${answer:-N}
 
 	case $do_update in
 	[Yy])
