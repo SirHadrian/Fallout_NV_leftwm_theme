@@ -37,6 +37,8 @@ declare -a dependencies=(
 	"tree"
 	"bat"
 	"pamixer"
+	"fd"
+	"sddm"
 	"qt5ct"
 	"lxappearance"
 )

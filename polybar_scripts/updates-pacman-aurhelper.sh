@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 
 run() {
-	sleep 2
+	sleep 1
 	if ! updates_arch=$(checkupdates 2>/dev/null | wc -l); then
 		updates_arch=0
 	fi
