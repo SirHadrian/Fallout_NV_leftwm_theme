@@ -15,7 +15,6 @@ declare -a launch_programs=(
 
 for item in "${launch_programs[@]}"; do
 	if ! pgrep -u $UID -f -x "$item" &>/dev/null; then
-		# Using eval to perform command substitution ex: picom SCRIPTPATH
 		$item &>/dev/null &
 	fi
 done
