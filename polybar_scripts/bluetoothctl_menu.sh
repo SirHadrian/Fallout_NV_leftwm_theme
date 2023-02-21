@@ -10,7 +10,7 @@ SCRIPTPATH="$(cd "$(dirname "$0")" || exit && pwd -P)"
 # 7 6 5
 POSITION=2
 #x-offset
-X_OFFSET=355
+X_OFFSET=-170
 #y-offset
 Y_OFFSET=50
 #font
@@ -80,7 +80,7 @@ device_submenu() {
 		DEVICE_NAME="${DEVICE_NAME} (Connected)"
 	fi
 
-	ACTION="$(printf "%s\n%s\n\n%s\n%s" "$CONNECT" "$DISCONNECT" "$BACK" "$EXIT" | rofi -dmenu -i -p "$DEVICE_NAME" -matching regex -config "$SCRIPTPATH/bluetoothctl_config.rasi" -location "$POSITION" -yoffset "$Y_OFFSET" -xoffset "$X_OFFSET" -font "$FONT")"
+	ACTION="$(printf "%s\n%s\n\n%s\n%s" "$CONNECT" "$DISCONNECT" "$BACK" "$EXIT" | rofi -dmenu -i -p "$DEVICE_NAME" -matching regex -config "$SCRIPTPATH/../configs/bluetoothctl_config.rasi" -location "$POSITION" -yoffset "$Y_OFFSET" -xoffset "$X_OFFSET" -font "$FONT")"
 
 	[[ -z "$ACTION" ]] && exit 1
 
@@ -108,7 +108,7 @@ bluetooth_click() {
 		OPTIONS="$POWER\n$EXIT"
 	fi
 
-	SELECTED="$(printf "%b" "$OPTIONS" | rofi -dmenu -i -p "Devices" -matching regex -config "$SCRIPTPATH/bluetoothctl_config.rasi" -location "$POSITION" -yoffset "$Y_OFFSET" -xoffset "$X_OFFSET" -font "$FONT")"
+	SELECTED="$(printf "%b" "$OPTIONS" | rofi -dmenu -i -p "Devices" -matching regex -config "$SCRIPTPATH/../configs/bluetoothctl_config.rasi" -location "$POSITION" -yoffset "$Y_OFFSET" -xoffset "$X_OFFSET" -font "$FONT")"
 
 	# Exit if no device is selected
 	[[ -z "$SELECTED" ]] && exit 1
