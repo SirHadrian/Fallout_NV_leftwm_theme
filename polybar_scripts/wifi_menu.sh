@@ -25,7 +25,7 @@ WIFI_STATUS="$(nmcli radio wifi)"
 [[ "$WIFI_STATUS" =~ "enabled" ]] && TOGGLE="Turn wifi off"
 [[ "$WIFI_STATUS" =~ "disabled" ]] && TOGGLE="Turn wifi on"
 
-RESULT="$(echo -e "$TOGGLE\n$LIST" | rofi -dmenu -p "Wi-Fi SSID" -matching regex -config "$SCRIPTPATH/../configs/wifi_config.rasi" -location "$POSITION" -yoffset "$Y_OFFSET" -xoffset "$X_OFFSET" -font "$FONT")"
+RESULT="$(echo -e "$TOGGLE\n$LIST" | rofi -dmenu -i -p "Wi-Fi SSID" -matching regex -config "$SCRIPTPATH/../configs/wifi_config.rasi" -location "$POSITION" -yoffset "$Y_OFFSET" -xoffset "$X_OFFSET" -font "$FONT")"
 
 if [[ "$RESULT" =~ "Turn wifi off" ]]; then
 	nmcli radio wifi off
@@ -39,5 +39,5 @@ CON_SSID="$(echo "$RESULT" | cut -d ' ' -f 1)"
 [[ -z "$CON_SSID" ]] && exit 0
 
 [[ $(nmcli con up "$CON_SSID") ]] ||
-	PASSWD="$(rofi -dmenu -p "Passwd" -matching regex -config "$SCRIPTPATH/../configs/wifi_config.rasi" -location "$POSITION" -yoffset "$Y_OFFSET" -xoffset "$X_OFFSET" -font "$FONT")" &&
+	PASSWD="$(rofi -dmenu -i -p "Passwd" -matching regex -config "$SCRIPTPATH/../configs/wifi_config.rasi" -location "$POSITION" -yoffset "$Y_OFFSET" -xoffset "$X_OFFSET" -font "$FONT")" &&
 	nmcli dev wifi con "$CON_SSID" password "$PASSWD"
