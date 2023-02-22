@@ -8,9 +8,9 @@ SCRIPTPATH="$(cd "$(dirname "$0")" || exit && pwd -P)"
 # 1 2 3
 # 8 0 4
 # 7 6 5
-POSITION=2
+POSITION=0
 #x-offset
-X_OFFSET=-170
+X_OFFSET=0
 #y-offset
 Y_OFFSET=50
 #font

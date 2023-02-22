@@ -58,6 +58,7 @@
         (command: Execute, value: "~/.config/leftwm/themes/current/scripts/rofisearch", modifier: ["modkey"], key: "g"),
         (command: Execute, value: "~/.config/leftwm/themes/current/scripts/screenshot_full", modifier: ["modkey"], key: "p"),
         (command: Execute, value: "~/.config/leftwm/themes/current/scripts/screenshot_area", modifier: ["modkey", "Shift"], key: "p"),
+        (command: Execute, value: "~/.config/leftwm/themes/current/polybar_scripts/bluetoothctl_menu.sh --click", modifier: ["modkey"], key: "b"),
         (command: Execute, value: "alacritty", modifier: ["modkey"], key: "Return"),
         (command: Execute, value: "rofi -show drun -matching regex -config ~/.config/leftwm/themes/fallout_new_vegas-leftwm-theme/configs/config.rasi", modifier: ["modkey"], key: "r"),
         (command: CloseWindow, value: "", modifier: ["modkey"], key: "q"),
