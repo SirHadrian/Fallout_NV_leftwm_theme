@@ -32,7 +32,7 @@
     border: 0;
     padding: 1ch;
     width: 20%;
-    font: "JetBrainsMono Nerd Font 11";
+    font: "JetBrainsMono Nerd Font 12";
 }
 
 #mainbox {

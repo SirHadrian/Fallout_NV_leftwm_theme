@@ -8,7 +8,7 @@ SCRIPTPATH=$(cd "$(dirname "$0")" || exit && pwd -P)
 # 7 6 5
 POSITION=3
 #y-offset
-YOFF=50
+YOFF=55
 #x-offset
 XOFF=-80
 #font

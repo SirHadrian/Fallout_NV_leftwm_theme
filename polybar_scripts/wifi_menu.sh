@@ -8,11 +8,11 @@ SCRIPTPATH="$(cd "$(dirname "$0")" || exit && pwd -P)"
 # 1 2 3
 # 8 0 4
 # 7 6 5
-POSITION=2
+POSITION=3
 #x-offset
-X_OFFSET=355
+X_OFFSET=-240
 #y-offset
-Y_OFFSET=50
+Y_OFFSET=55
 #fields to be displayed
 FIELDS=SSID,SECURITY,BARS
 #font
