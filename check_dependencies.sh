@@ -37,6 +37,8 @@ declare -a dependencies=(
 	"tree"
 	"bat"
 	"pamixer"
+	"pavucontrol"
+	"qpwgraph"
 	"fd"
 	"sddm"
 	"qt5ct"
