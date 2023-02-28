@@ -22,22 +22,23 @@ FONT="JetBrainsMono Nerd Font 10"
 LIST="$(nmcli --fields "$FIELDS" device wifi)"
 WIFI_STATUS="$(nmcli radio wifi)"
 
-[[ "$WIFI_STATUS" =~ "enabled" ]] && TOGGLE="Turn wifi off"
-[[ "$WIFI_STATUS" =~ "disabled" ]] && TOGGLE="Turn wifi on"
+[[ "$WIFI_STATUS" == "enabled" ]] && TOGGLE="Turn wifi off"
+[[ "$WIFI_STATUS" == "disabled" ]] && TOGGLE="Turn wifi on"
 
-RESULT="$(echo -e "$TOGGLE\n$LIST" | rofi -dmenu -i -p "Wi-Fi SSID" -matching regex -config "$SCRIPTPATH/../configs/wifi_config.rasi" -location "$POSITION" -yoffset "$Y_OFFSET" -xoffset "$X_OFFSET" -font "$FONT")"
+RESULT="$(printf "%s\n%s" "$TOGGLE" "$LIST" | rofi -dmenu -i -p "Wi-Fi SSID" -matching regex -config "$SCRIPTPATH/../configs/wifi_config.rasi" -location "$POSITION" -yoffset "$Y_OFFSET" -xoffset "$X_OFFSET" -font "$FONT")"
 
-if [[ "$RESULT" =~ "Turn wifi off" ]]; then
+if [[ "$RESULT" == "Turn wifi off" ]]; then
 	nmcli radio wifi off
 	exit 0
-elif [[ "$RESULT" =~ "Turn wifi on" ]]; then
+elif [[ "$RESULT" == "Turn wifi on" ]]; then
 	nmcli radio wifi on
 	exit 0
 fi
 
-CON_SSID="$(echo "$RESULT" | cut -d ' ' -f 1)"
+CON_SSID="$(printf "%s" "$RESULT" | awk '{print $1}')"
 [[ -z "$CON_SSID" ]] && exit 0
 
-[[ $(nmcli con up "$CON_SSID") ]] ||
+if ! nmcli con up "$CON_SSID"; then
 	PASSWD="$(rofi -dmenu -i -p "Passwd" -matching regex -config "$SCRIPTPATH/../configs/wifi_config.rasi" -location "$POSITION" -yoffset "$Y_OFFSET" -xoffset "$X_OFFSET" -font "$FONT")" &&
-	nmcli dev wifi con "$CON_SSID" password "$PASSWD"
+		nmcli dev wifi con "$CON_SSID" password "$PASSWD"
+fi
