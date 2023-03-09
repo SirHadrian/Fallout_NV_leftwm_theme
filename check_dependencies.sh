@@ -43,6 +43,7 @@ declare -a dependencies=(
 	"sddm"
 	"qt5ct"
 	"lxappearance"
+	"gthumb"
 )
 
 printf "\n${BWhite}%s" "================================"
