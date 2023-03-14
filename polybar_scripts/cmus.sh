@@ -20,7 +20,7 @@ if [[ $artist = *[!\ ]* ]]; then
 	# minutes2=$(prepend_zero $((duration / 60)))
 	# seconds2=$(prepend_zero $((duration % 60)))
 	# echo -n "$artist - $song [$minutes1:$seconds1/$minutes2:$seconds2]"
-	printf "%s" "$artist - $song"
+	printf "%s" "$song - $artist"
 else
 	echo
 fi
