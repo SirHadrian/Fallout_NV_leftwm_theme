@@ -36,7 +36,9 @@
         (name: "Alacritty", value: "alacritty", x: 380, y: 200, height: 700, width: 1200),
         (name: "Pulsemixer", value: "alacritty -e pulsemixer", x: 380, y: 200, height: 700, width: 1200),
     ],
-    window_rules: [],
+    window_rules: [
+        ( window_title: "OpenGL Template", spawn_floating: true ),
+    ],
     disable_current_tag_swap: false,
     disable_tile_drag: false,
     disable_window_snap: true,
