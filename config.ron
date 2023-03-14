@@ -33,7 +33,8 @@
     layout_mode: Workspace,
     insert_behavior: Bottom,
     scratchpad: [
-        (name: "Alacritty", value: "alacritty", x: 860, y: 390, height: 300, width: 200),
+        (name: "Alacritty", value: "alacritty", x: 400, y: 200, height: 600, width: 900),
+        (name: "Pulsemixer", value: "alacritty -e pulsemixer", x: 400, y: 200, height: 600, width: 900),
     ],
     window_rules: [],
     disable_current_tag_swap: false,
@@ -102,6 +103,8 @@
         (command: MoveToTag, value: "7", modifier: ["modkey", "Shift"], key: "7"),
         (command: MoveToTag, value: "8", modifier: ["modkey", "Shift"], key: "8"),
         (command: MoveToTag, value: "9", modifier: ["modkey", "Shift"], key: "9"),
+        (command: ToggleScratchPad, value: "Alacritty", modifier: ["modkey"], key: "s"),
+        (command: ToggleScratchPad, value: "Pulsemixer", modifier: ["modkey"], key: "m"),
     ],
     state_path: None,
 )
