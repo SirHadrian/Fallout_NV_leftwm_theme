@@ -33,8 +33,8 @@
     layout_mode: Workspace,
     insert_behavior: Bottom,
     scratchpad: [
-        (name: "Alacritty", value: "alacritty", x: 380, y: 200, height: 700, width: 1200),
-        (name: "Pulsemixer", value: "alacritty -e pulsemixer", x: 380, y: 200, height: 700, width: 1200),
+        (name: "Alacritty", value: "alacritty", x: 150, y: 200, height: 700, width: 1620),
+        (name: "Pulsemixer", value: "alacritty -e pulsemixer", x: 150, y: 200, height: 700, width: 1620),
     ],
     window_rules: [
         ( window_title: "OpenGL Template", spawn_floating: true ),
