@@ -18,9 +18,9 @@ run() {
 	updates=$((updates_arch + updates_aur))
 
 	if [ "$updates" -gt 0 ]; then
-		echo "$updates"
+		printf "%s" "$updates"
 	else
-		echo "0"
+		printf "%s" "0"
 	fi
 }
 
