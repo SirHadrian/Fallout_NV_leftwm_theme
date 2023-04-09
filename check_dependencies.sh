@@ -44,6 +44,7 @@ declare -a dependencies=(
 	"qt5ct"
 	"lxappearance"
 	"gthumb"
+	"ncdu"
 )
 
 printf "\n${BWhite}%s" "================================"

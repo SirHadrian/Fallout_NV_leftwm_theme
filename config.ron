@@ -12,7 +12,7 @@
     modkey: "Mod4",
     mousekey: "Mod4",
     workspaces: [],
-    tags: [ " ", " ", " ", " ", " ",  ],
+    tags: [ " ", " ", " ", " ", " ",  ],
     max_window_width: None,
     layouts: [
         Monocle,
