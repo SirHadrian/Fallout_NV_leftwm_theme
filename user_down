@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Script won't run on soft reload
+# Script won't run on soft reload, i think..
 
 # End user programs
 declare -a end_programs=(
