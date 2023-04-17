@@ -5,9 +5,16 @@ configuration {
     display-drun:               "STATUS";
     display-filebrowser:        "ITEMS";
     display-window:             "DATA";
-	drun-display-format:        "{name}";
 	window-format:              "{w} · {c} · {t}";
 
+    window {
+        hide-active-window: true;
+    }
+  
+    filebrowser {
+        directory: "/home/sirhadrian";
+        directories-first: true;
+    }
 }
  
 /*****----- Global Properties -----*****/
@@ -57,7 +64,8 @@ imagebox {
 inputbar {
     enabled:                     true;
     spacing:                     10px;
-    padding:                     15px;
+    padding:                     1.4ch;
+    margin:                      1ch;
     border-radius:               2px;
     background-color:            orange / 10%;
     text-color:                  @fallout;
@@ -104,7 +112,7 @@ button selected {
 /*****----- Listview -----*****/
 listview {
     enabled:                     true;
-    columns:                     3;
+    columns:                     2;
     lines:                       8;
     cycle:                       false;
     dynamic:                     true;
