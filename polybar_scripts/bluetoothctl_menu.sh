@@ -3,7 +3,7 @@
 # Config
 #==========================================================
 SCRIPTPATH="$(cd "$(dirname "$0")" || exit && pwd -P)"
-# Config for rofi-wifi-menu
+# Config for rofi-bluetooth-menu
 # position values:
 # 1 2 3
 # 8 0 4
@@ -14,7 +14,7 @@ X_OFFSET=0
 #y-offset
 Y_OFFSET=50
 #font
-FONT="JetBrainsMono Nerd Font 10"
+FONT="JetBrainsMono Nerd Font 12"
 #==========================================================
 
 # Constants
@@ -80,7 +80,7 @@ device_submenu() {
 		DEVICE_NAME="${DEVICE_NAME} (Connected)"
 	fi
 
-	ACTION="$(printf "%s\n%s\n\n%s\n%s" "$CONNECT" "$DISCONNECT" "$BACK" "$EXIT" | rofi -dmenu -i -p "$DEVICE_NAME" -matching regex -config "$SCRIPTPATH/../configs/bluetoothctl_config.rasi" -location "$POSITION" -yoffset "$Y_OFFSET" -xoffset "$X_OFFSET" -font "$FONT")"
+	ACTION="$(printf "%s\n%s\n\n%s\n%s" "$CONNECT" "$DISCONNECT" "$BACK" "$EXIT" | rofi -dmenu -i -hover-select -me-select-entry '' -me-accept-entry MousePrimary -p "$DEVICE_NAME" -matching regex -config "$SCRIPTPATH/../configs/bluetoothctl_config.rasi" -location "$POSITION" -yoffset "$Y_OFFSET" -xoffset "$X_OFFSET" -font "$FONT")"
 
 	[[ -z "$ACTION" ]] && exit 1
 
@@ -108,7 +108,7 @@ bluetooth_click() {
 		OPTIONS="$POWER\n$EXIT"
 	fi
 
-	SELECTED="$(printf "%b" "$OPTIONS" | rofi -dmenu -i -p "Devices" -matching regex -config "$SCRIPTPATH/../configs/bluetoothctl_config.rasi" -location "$POSITION" -yoffset "$Y_OFFSET" -xoffset "$X_OFFSET" -font "$FONT")"
+	SELECTED="$(printf "%b" "$OPTIONS" | rofi -dmenu -i -hover-select -me-select-entry '' -me-accept-entry MousePrimary -p "Devices" -matching regex -config "$SCRIPTPATH/../configs/bluetoothctl_config.rasi" -location "$POSITION" -yoffset "$Y_OFFSET" -xoffset "$X_OFFSET" -font "$FONT")"
 
 	# Exit if no device is selected
 	[[ -z "$SELECTED" ]] && exit 1

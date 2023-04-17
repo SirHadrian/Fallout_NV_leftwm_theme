@@ -3,9 +3,6 @@ configuration {
 }
  
 * {
-//    font:                        "JetBrainsMono Nerd Font 12";
-    font:                        "CaskaydiaCove Nerd Font 10";
-
     fallout:                     #ffb642;
 }
 
