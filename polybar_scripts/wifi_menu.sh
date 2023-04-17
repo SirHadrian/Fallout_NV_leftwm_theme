@@ -19,10 +19,9 @@ FIELDS=SSID,SECURITY,BARS
 FONT="JetBrainsMono Nerd Font 10"
 #==========================================================
 
-LIST="$(nmcli --fields "$FIELDS" device wifi)"
 WIFI_STATUS="$(nmcli radio wifi)"
 
-[[ "$WIFI_STATUS" == "enabled" ]] && TOGGLE="Turn wifi off"
+[[ "$WIFI_STATUS" == "enabled" ]] && TOGGLE="Turn wifi off" && LIST="$(nmcli --fields "$FIELDS" device wifi)"
 [[ "$WIFI_STATUS" == "disabled" ]] && TOGGLE="Turn wifi on"
 
 RESULT="$(printf "%s\n%s" "$TOGGLE" "$LIST" | rofi -dmenu -i -hover-select -me-select-entry '' -me-accept-entry MousePrimary -p "Wi-Fi SSID" -matching regex -config "$SCRIPTPATH/../configs/wifi_config.rasi" -location "$POSITION" -yoffset "$Y_OFFSET" -xoffset "$X_OFFSET" -font "$FONT")"
