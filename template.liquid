@@ -5,7 +5,7 @@
 %{A}
 {% elsif tag.urgent %}
 %{A1:$SCRIPTPATH/change_to_tag {{workspace.index}} {{tag.index}}:}
-%{B#805b21}%{F#ffb642}  {{tag.name}}  %{F-}%{B-}
+%{B#ffb642}%{F#FFFFFF}  {{tag.name}}  %{F-}%{B-}
 %{A}
 {% elsif tag.visible  %}
 %{A1:$SCRIPTPATH/change_to_tag {{workspace.index}} {{tag.index}}:}
