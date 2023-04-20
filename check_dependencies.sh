@@ -15,7 +15,7 @@ declare -a dependencies=(
 	"dunst"
 	"picom"
 	"unclutter"
-	"optimus-manager"
+	# "optimus-manager"
 	"optimus-manager-qt"
 	"amixer"
 	"light"
@@ -44,7 +44,7 @@ declare -a dependencies=(
 	"qt5ct"
 	"lxappearance"
 	"gthumb"
-	"ncdu"
+	# "ncdu"
 )
 
 printf "\n${BWhite}%s" "================================"
