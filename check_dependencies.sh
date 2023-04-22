@@ -44,6 +44,7 @@ declare -a dependencies=(
 	"qt5ct"
 	"lxappearance"
 	"gthumb"
+	"nvidia-prime"
 	# "ncdu"
 )
 
