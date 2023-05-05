@@ -6,7 +6,7 @@ wal -R
 
 # Start user programs
 declare -a launch_programs=(
-	"picom --config $SCRIPTPATH/configs/picom.conf"
+	"picom --animations --experimental-backend --config $SCRIPTPATH/configs/picom.conf"
 	# "optimus-manager-qt"
 	"unclutter"
 	"greenclip daemon"
