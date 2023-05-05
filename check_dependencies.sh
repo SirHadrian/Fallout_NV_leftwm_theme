@@ -5,29 +5,37 @@ SCRIPTDIR="$(cd "$(dirname "$0")" || exit && pwd -P)"
 # Get colors
 source "$SCRIPTDIR"/colors.sh
 
-# Check for hard dependencies
-declare -a dependencies=(
+# Dependencies
+
+# Without those packages the theme may not work at all
+hard_dependencies=(
+	"leftwm"
 	"polybar"
 	"rofi"
-	"leftwm"
-	"checkupdates"
+	"picom"
 	"greenclip"
 	"dunst"
-	"picom"
-	"unclutter"
-	# "optimus-manager"
-	"optimus-manager-qt"
-	"amixer"
-	"light"
-	"alacritty"
-	"xlock"
-	"bluetoothctl"
-	"paru"
 	"nmcli"
+	"pamixer"
+	"alacritty"
+)
+
+# Without those packages the theme may work but with some broken functionality
+solft_dependencies=(
 	"feh"
 	"wal"
-	"cmus"
+	"bluetoothctl"
+	"xlock"
+	"light"
+	"amixer"
+	"unclutter"
 	"scrot"
+	"optimus-manager-qt"
+)
+
+# Can be safely ignored
+optional_dependencies=(
+	"cmus"
 	"ffmpeg"
 	"redshift"
 	"rg"
@@ -36,7 +44,6 @@ declare -a dependencies=(
 	"dust"
 	"tree"
 	"bat"
-	"pamixer"
 	"pavucontrol"
 	"qpwgraph"
 	"fd"
@@ -45,15 +52,15 @@ declare -a dependencies=(
 	"lxappearance"
 	"gthumb"
 	"nvidia-prime"
-	# "ncdu"
+ 	"ncdu"
 )
 
-printf "\n${BWhite}%s" "================================"
-printf "\n%s" "|      Check Dependencies      |"
-printf "\n%s${Color_Off}" "================================"
+printf "\n${BWhite}%s" "=================================="
+printf "\n%s" "= Check Hard Dependencies        ="
+printf "\n%s${Color_Off}" "=================================="
 printf "\n\n"
 
-for item in "${dependencies[@]}"; do
+for item in "${hard_dependencies[@]}"; do
 	printf "${BWhite}%-20s      " "${item}"
 	if [[ -x "$(command -v "$item")" ]]; then
 		printf "${BGreen}%s${Color_Off}\n" "Ok.."
@@ -61,5 +68,42 @@ for item in "${dependencies[@]}"; do
 		printf "${BRed}%s${Color_Off}\n" "Missing.."
 	fi
 done
+
+
+printf "\n${BWhite}%s" "=================================="
+printf "\n%s" "= Check Soft Dependencies        ="
+printf "\n%s${Color_Off}" "=================================="
+printf "\n\n"
+
+for item in "${solft_dependencies[@]}"; do
+	printf "${BWhite}%-20s      " "${item}"
+	if [[ -x "$(command -v "$item")" ]]; then
+		printf "${BGreen}%s${Color_Off}\n" "Ok.."
+	else
+		printf "${BRed}%s${Color_Off}\n" "Missing.."
+	fi
+done
+
+
+printf "\n${BWhite}%s" "=================================="
+printf "\n%s" "= Check Optional Dependencies    ="
+printf "\n%s${Color_Off}" "=================================="
+printf "\n\n"
+
+for item in "${optional_dependencies[@]}"; do
+	printf "${BWhite}%-20s      " "${item}"
+	if [[ -x "$(command -v "$item")" ]]; then
+		printf "${BGreen}%s${Color_Off}\n" "Ok.."
+	else
+		printf "${BRed}%s${Color_Off}\n" "Missing.."
+	fi
+done
+
+
+
+
+
+
+
 
 printf "\n%s\n" "Tip: use pacman -F <command> to find the package the command is from"
