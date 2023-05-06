@@ -1,8 +1,8 @@
 #!/usr/bin/bash
 
-prepend_zero() {
-	seq -f "%02g" "$1" "$1"
-}
+# prepend_zero() {
+# 	seq -f "%02g" "$1" "$1"
+# }
 
 artist=$(printf "%s" "$(cmus-remote -C status | grep "tag artist" | cut -c 12-)")
 
