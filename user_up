@@ -2,7 +2,7 @@
 
 # Pywal
 # -R restores the last colorscheme that was in use.
-wal -R
+# wal -R
 
 # Start user programs
 declare -a launch_programs=(
