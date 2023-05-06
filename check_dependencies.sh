@@ -53,6 +53,7 @@ optional_dependencies=(
 	"gthumb"
 	"nvidia-prime"
  	"ncdu"
+ 	"ranger"
 )
 
 printf "\n${BWhite}%s" "=================================="
