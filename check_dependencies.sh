@@ -70,7 +70,6 @@ for item in "${hard_dependencies[@]}"; do
 	fi
 done
 
-
 printf "\n${BWhite}%s" "=================================="
 printf "\n%s" "= Check Soft Dependencies        ="
 printf "\n%s${Color_Off}" "=================================="
@@ -84,7 +83,6 @@ for item in "${solft_dependencies[@]}"; do
 		printf "${BRed}%s${Color_Off}\n" "Missing.."
 	fi
 done
-
 
 printf "\n${BWhite}%s" "=================================="
 printf "\n%s" "= Check Optional Dependencies    ="
@@ -100,11 +98,4 @@ for item in "${optional_dependencies[@]}"; do
 	fi
 done
 
-
-
-
-
-
-
-
-printf "\n%s\n" "Tip: use pacman -F <command> to find the package the command is from"
+printf "\n%s\n" "Tip: use dnf provides <command> to find the package the command is from"
