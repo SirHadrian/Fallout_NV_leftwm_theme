@@ -2,15 +2,11 @@
 
 run() {
 	sleep 1
-	if ! updates="$(dnf check-update 2>/dev/null | wc -l)"; then
-		updates=0
-	fi
+	updates="$(dnf check-update 2>/dev/null | wc -l)"
 
-	if [ "$updates" -gt 0 ]; then
-		printf "%s" "$updates"
-	else
-		printf "%s" "0"
-	fi
+	((updates = updates - 1))
+
+	printf "%s" "$updates"
 }
 
 update_system() {
