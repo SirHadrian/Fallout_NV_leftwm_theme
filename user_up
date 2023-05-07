@@ -7,7 +7,7 @@ SCRIPTPATH="$(cd "$(dirname "$0")" || exit && pwd -P)"
 # wal -R
 
 # Restore wallpaper
-feh --bg-fill "$SCRIPTPATH/wallpapers/557270.jpg"
+feh --bg-fill "$SCRIPTPATH/wallpapers/119860.jpg"
 
 # Start user programs
 declare -a launch_programs=(
