@@ -2,7 +2,7 @@
 
 run() {
 	sleep 1
-	updates="$(dnf check-update 2>/dev/null | wc -l)"
+	updates="$(dnf check-update | wc -l)"
 
 	((updates = updates - 1))
 
