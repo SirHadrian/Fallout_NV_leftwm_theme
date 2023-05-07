@@ -8,7 +8,7 @@ source "$SCRIPTDIR"/colors.sh
 # Dependencies
 
 # Without those packages the theme may not work at all
-hard_dependencies=(
+declare -a hard_dependencies=(
 	"leftwm"
 	"polybar"
 	"rofi"
@@ -21,7 +21,7 @@ hard_dependencies=(
 )
 
 # Without those packages the theme may work but with some broken functionality
-solft_dependencies=(
+declare -a solft_dependencies=(
 	"feh"
 	"wal"
 	"bluetoothctl"
@@ -34,7 +34,7 @@ solft_dependencies=(
 )
 
 # Can be safely ignored
-optional_dependencies=(
+declare -a optional_dependencies=(
 	"cmus"
 	"ffmpeg"
 	"redshift"
