@@ -1,8 +1,13 @@
 #!/usr/bin/bash
 
+SCRIPTPATH="$(cd "$(dirname "$0")" || exit && pwd -P)"
+
 # Pywal
 # -R restores the last colorscheme that was in use.
 # wal -R
+
+# Restore wallpaper
+feh --bg-fill "$SCRIPTPATH/wallpapers/557270.jpg"
 
 # Start user programs
 declare -a launch_programs=(
