@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 
 # prepend_zero() {
 # 	seq -f "%02g" "$1" "$1"
