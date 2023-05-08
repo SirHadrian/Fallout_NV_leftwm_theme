@@ -50,7 +50,7 @@
         // Session
         (command: Execute, value: "loginctl kill-session $XDG_SESSION_ID", modifier: ["modkey", "Shift"], key: "x"),
         
-        (command: HardReload, modifier: ["modkey", "Shift"], key: "y"),
+        //(command: HardReload, modifier: ["modkey", "Shift"], key: "y"),
         (command: SoftReload, modifier: ["modkey", "Shift"], key: "r"),
         
         // User scripts
