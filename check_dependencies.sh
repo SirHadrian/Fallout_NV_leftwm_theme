@@ -54,6 +54,7 @@ declare -a optional_dependencies=(
 	"nvidia-prime"
  	"ncdu"
  	"ranger"
+ 	"figlet"
 )
 
 printf "\n${BWhite}%s" "=================================="
