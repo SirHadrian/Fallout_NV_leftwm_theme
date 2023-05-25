@@ -55,6 +55,7 @@ declare -a optional_dependencies=(
  	"ncdu"
  	"ranger"
  	"figlet"
+ 	"zoxide"
 )
 
 printf "\n${BWhite}%s" "=================================="
