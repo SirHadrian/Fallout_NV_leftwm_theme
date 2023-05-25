@@ -9,6 +9,11 @@ SCRIPTPATH="$(cd "$(dirname "$0")" || exit && pwd -P)"
 # Restore wallpaper
 feh --bg-fill "$SCRIPTPATH/wallpapers/119860.jpg"
 
+# Kill dunst, for some reason it doesn't load the config at startup
+kill "$(pgrep -x 'dunst')" &> /dev/null
+# Wait for dunst to close
+while pgrep -x 'dunst' &> /dev/null; do sleep 1; done
+
 # Start user programs
 declare -a launch_programs=(
 
