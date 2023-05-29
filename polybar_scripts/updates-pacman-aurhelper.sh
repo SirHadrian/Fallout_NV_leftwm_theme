@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
 
 run() {
-	
+
 	updates="$(dnf check-update --quiet | wc -l)"
 
+	((updates = updates - 1))
 	printf "%s" "$updates"
 }
 
