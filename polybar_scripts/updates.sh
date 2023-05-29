@@ -4,7 +4,7 @@ run() {
 
 	updates="$(dnf check-update --quiet | wc -l)"
 
-	((updates = updates - 1))
+	[[ $updates -gt 0 ]] && ((updates = updates - 1))
 	printf "%s" "$updates"
 }
 
