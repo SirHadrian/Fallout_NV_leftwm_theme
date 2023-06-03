@@ -2,7 +2,7 @@
 
 SCRIPTDIR="$(cd "$(dirname "$0")" || exit && pwd -P)"
 
-BROWSER="librewolf"
+BROWSER="flatpak run io.gitlab.librewolf-community -- "
 
 declare -A URLS=(
 	["google"]="https://www.google.com/search?q="
