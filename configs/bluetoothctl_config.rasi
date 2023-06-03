@@ -3,6 +3,7 @@ configuration {
 }
  
 * {
+    font:                        "CaskaydiaCove Nerd Font 12";
     fallout:                     #ffb642;
 }
 
