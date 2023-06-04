@@ -23,7 +23,7 @@ gen_list() {
 }
 
 main() {
-	site=$(gen_list | rofi -dmenu -config "$SCRIPTDIR"/config.rasi -matching regex -p "Search on")
+	site=$(gen_list | rofi -dmenu -i -hover-select -me-select-entry '' -me-accept-entry MousePrimary -config "$SCRIPTDIR"/config.rasi -matching regex -p "Search on")
 
 	if [[ -n "$site" ]]; then
 		query=$(rofi -dmenu -config "$SCRIPTDIR"/config.rasi -mathcing regex -p "$site")
