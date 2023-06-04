@@ -1,5 +1,5 @@
 #!/usr/bin/bash
 
-SCRIPTDIR="$(cd "$(dirname "$0")" || exit && pwd -P)"
+NOTIFICATION_ICON="$HOME/.config/leftwm/themes/current/scripts/notification.jpg"
 
-dunstify --raw_icon="$SCRIPTDIR"/notification.jpg "$1"
+dunstify --raw_icon="$NOTIFICATION_ICON" "$1"
