@@ -5,15 +5,15 @@ SCRIPTDIR="$(cd "$(dirname "$0")" || exit && pwd -P)"
 BROWSER="flatpak run io.gitlab.librewolf-community -- "
 
 declare -A URLS=(
-	["google"]="https://www.google.com/search?q="
-	["duckduckgo"]="https://www.duckduckgo.com/?q="
-	["archwiki"]="https://wiki.archlinux.org/title/"
-	["yandex"]="https://yandex.ru/yandsearch?text="
-	["github"]="https://github.com/search?q="
-	["stackoverflow"]="http://stackoverflow.com/search?q="
-	["askubuntu"]="http://askubuntu.com/search?q="
-	["piratebay"]="https://thepiratebay.org/search/"
-	["youtube"]="https://www.youtube.com/results?search_query="
+	["Google"]="https://www.google.com/search?q="
+	["Duckduckgo"]="https://www.duckduckgo.com/?q="
+	["Archwiki"]="https://wiki.archlinux.org/title/"
+	["Github"]="https://github.com/search?q="
+	["Stackoverflow"]="http://stackoverflow.com/search?q="
+	["Youtube"]="https://www.youtube.com/results?search_query="
+	["Yandex"]="https://yandex.ru/yandsearch?text="
+	["Askubuntu"]="http://askubuntu.com/search?q="
+	["Piratebay"]="https://thepiratebay.org/search/"
 )
 
 gen_list() {
