@@ -52,10 +52,13 @@ declare -a optional_dependencies=(
 	"lxappearance"
 	"gthumb"
 	"nvidia-prime"
- 	"ncdu"
- 	"ranger"
- 	"figlet"
- 	"zoxide"
+	"ncdu"
+	"ranger"
+	"figlet"
+	"zoxide"
+	"mprocs"
+	"simple-http-server"
+	"gitui"
 )
 
 printf "\n${BWhite}%s" "=================================="
