@@ -12,7 +12,7 @@
     modkey: "Mod4",
     mousekey: "Mod4",
     workspaces: [],
-    tags: [ " ", " ", " ", " ", " " ],
+    tags: [ " ", " ", " ", " ", " " ],
     max_window_width: None,
     layouts: [
         Monocle,
@@ -38,11 +38,14 @@
     ],
     window_rules: [
         ( window_title: "OpenGL Template", spawn_floating: true ),
+        ( window_title: "Joplin", spawn_on_tag: 4),
+        ( window_title: "Mozilla Firefox", spawn_on_tag: 1),
+        ( window_class: "Steam", spawn_on_tag: 5),
     ],
     disable_current_tag_swap: false,
     disable_tile_drag: false,
     disable_window_snap: true,
-    focus_behaviour: Sloppy, // Can be Sloppy(follows mouse), ClickTo(just on click), or Driven(no mouse focus)
+    focus_behaviour: Driven, // Can be Sloppy(follows mouse), ClickTo(just on click), or Driven(no mouse focus)
     focus_new_windows: true,
     sloppy_mouse_follows_focus: true,
     keybind: [
