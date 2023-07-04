@@ -1,0 +1,189 @@
+/*****----- Configuration -----*****/
+configuration {
+	modi:                       "filebrowser";
+    show-icons:                 true;
+
+    filebrowser {
+        directory: "/home/sirhadrian/Pictures";
+        directories-first: true;
+    }
+}
+ 
+/*****----- Global Properties -----*****/
+* {
+//    font:                        "JetBrainsMono Nerd Font 12";
+    font:                        "CaskaydiaCove Nerd Font 11";
+
+    fallout:                     #ffb642;
+}
+
+/*****----- Main Window -----*****/
+window {
+    /* properties for window widget */
+    transparency:                "real";
+    location:                    center;
+    anchor:                      center;
+    fullscreen:                  true;
+    width:                       100%;
+    height:                      100%;
+
+    /* properties for all widgets */
+    enabled:                     true;
+    border-radius:               0px;
+    border:                      0px solid;
+    border-color:                @fallout;
+    cursor:                      "default";
+    background-color:            black / 50%;
+}
+
+/*****----- Main Box -----*****/
+mainbox {
+    enabled:                     true;
+    spacing:                     10px;
+    background-color:            transparent;
+    orientation:                 horizontal;
+    children:                    [ "imagebox" ];
+}
+
+imagebox {
+    padding:                     10px;
+    background-color:            orange / 5%;
+    orientation:                 vertical;
+    children:                    [ "listview", "inputbar" ];
+}
+
+/*****----- Inputbar -----*****/
+inputbar {
+    enabled:                     true;
+    spacing:                     10px;
+    padding:                     16px;
+    margin:                      8px;
+    border-radius:               2px;
+    background-color:            orange / 10%;
+    text-color:                  @fallout;
+    children:                    [ "textbox-prompt-colon", "entry" ];
+}
+textbox-prompt-colon {
+    enabled:                     true;
+    expand:                      false;
+    str:                         "";
+    background-color:            none;
+    text-color:                  inherit;
+}
+entry {
+    enabled:                     true;
+    background-color:            inherit;
+    text-color:                  inherit;
+    cursor:                      text;
+    placeholder:                 "Search...";
+    placeholder-color:           inherit;
+    background-color:            none;
+}
+
+/*****----- Listview -----*****/
+listview {
+    enabled:                     true;
+    columns:                     5;
+    lines:                       2;
+    cycle:                       false;
+    dynamic:                     true;
+    scrollbar:                   false;
+    layout:                      vertical;
+    reverse:                     false;
+    fixed-height:                true;
+    fixed-columns:               true;
+    border:                      0px solid;
+    spacing:                     0px;
+    background-color:            transparent;
+    text-color:                  @fallout;
+    cursor:                      "default";
+}
+
+/*****----- Elements -----*****/
+element {
+    enabled:                     true;
+    spacing:                     0px;
+    margin:                      4px;
+    padding:                     4px;
+    border:                      0px solid;
+    border-radius:               0px;
+    border-color:                @fallout;
+    background-color:            transparent;
+    text-color:                  @fallout;
+    cursor:                      pointer;
+    orientation:                 vertical;
+}
+
+element selected.normal {
+    background-color:            transparent;
+    text-color:                  @fallout;
+    border:                      1px solid;
+}
+
+element normal.normal {
+    background-color:            inherit;
+    text-color:                  inherit;
+}
+
+element.alternate.normal {
+    background-color:            inherit;
+    text-color:                  inherit;
+}
+
+element normal.urgent {
+    background-color:            inherit;
+    text-color:                  inherit;
+}
+
+element normal.active {
+    background-color:            inherit;
+    text-color:                  inherit;
+}
+
+element selected.urgent {
+    background-color:            inherit;
+    text-color:                  inherit;
+}
+
+element selected.active {
+    background-color:            inherit;
+    text-color:                  inherit;
+}
+
+element-icon {
+    enabled:                     true;
+    background-color:            transparent;
+    text-color:                  inherit;
+    size:                        384px;
+    cursor:                      inherit;
+    padding:                     4px;
+    margin:                      4px;
+}
+
+element-text {
+    background-color:            transparent;
+    text-color:                  inherit;
+    cursor:                      inherit;
+    vertical-align:              1.0;
+    horizontal-align:            0.5;
+}
+
+/*****----- Message -----*****/
+message {
+    background-color:            transparent;
+    border:                      0px solid;
+}
+textbox {
+    padding:                     15px;
+    border-radius:               10px;
+    background-color:            inherit;
+    text-color:                  @fallout;
+    vertical-align:              0.0;
+    horizontal-align:            0.0;
+}
+error-message {
+    padding:                     15px;
+    border-radius:               20px;
+    background-color:            inherit;
+    text-color:                  red;
+}
