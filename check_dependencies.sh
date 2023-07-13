@@ -59,6 +59,9 @@ declare -a optional_dependencies=(
 	"mprocs"
 	"simple-http-server"
 	"gitui"
+	"mc"
+	"entr"
+	"fzf"
 )
 
 printf "\n${BWhite}%s" "=================================="
