@@ -14,4 +14,4 @@ XOFF=-80
 #font
 FONT="JetBrainsMono Nerd Font 14"
 
-rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}' -config "$SCRIPTPATH"/../configs/clipboard_config.rasi -location "$POSITION" -yoffset "$YOFF" -xoffset "$XOFF" -font "$FONT"
+rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}' -hover-select -me-select-entry '' -me-accept-entry MousePrimary -config "$SCRIPTPATH"/../configs/clipboard_config.rasi -location "$POSITION" -yoffset "$YOFF" -xoffset "$XOFF" -font "$FONT"
