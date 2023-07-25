@@ -64,6 +64,7 @@ declare -a optional_dependencies=(
 	"fzf"
 	"gwenview"
  	"ncdu"
+ 	"btm"
 )
 
 printf "\n${BWhite}%s" "=================================="
