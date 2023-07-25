@@ -3,11 +3,12 @@
 
 # End user programs
 declare -a end_programs=(
+
 	"picom"
-	"optimus-manager-qt"
 	"unclutter"
 	"greenclip"
 	"dunst"
+	
 )
 
 for item in "${end_programs[@]}"; do

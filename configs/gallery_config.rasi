@@ -1,18 +1,10 @@
 /*****----- Configuration -----*****/
 configuration {
-	modi:                       "drun,filebrowser,window";
+	modi:                       "filebrowser";
     show-icons:                 true;
-    display-drun:               "STATUS";
-    display-filebrowser:        "ITEMS";
-    display-window:             "DATA";
-	window-format:              "{w} · {c} · {t}";
 
-    window {
-        hide-active-window: true;
-    }
-  
     filebrowser {
-        directory: "/home/sirhadrian";
+        directory: "/home/sirhadrian/Pictures";
         directories-first: true;
     }
 }
@@ -31,14 +23,14 @@ window {
     transparency:                "real";
     location:                    center;
     anchor:                      center;
-    fullscreen:                  false;
-    width:                       50%;
-    height:                      50%;
+    fullscreen:                  true;
+    width:                       100%;
+    height:                      100%;
 
     /* properties for all widgets */
     enabled:                     true;
     border-radius:               0px;
-    border:                      2px solid;
+    border:                      0px solid;
     border-color:                @fallout;
     cursor:                      "default";
     background-color:            black / 50%;
@@ -56,17 +48,16 @@ mainbox {
 imagebox {
     padding:                     10px;
     background-color:            orange / 5%;
-//    background-image:            url("~/.config/leftwm/themes/fallout_new_vegas-leftwm-theme/configs/fallout.png", height);
     orientation:                 vertical;
-    children:                    [ "inputbar", "listview", "mode-switcher" ];
+    children:                    [ "listview", "inputbar" ];
 }
 
 /*****----- Inputbar -----*****/
 inputbar {
     enabled:                     true;
     spacing:                     10px;
-    padding:                     1.4ch;
-    margin:                      1ch;
+    padding:                     16px;
+    margin:                      8px;
     border-radius:               2px;
     background-color:            orange / 10%;
     text-color:                  @fallout;
@@ -89,32 +80,11 @@ entry {
     background-color:            none;
 }
 
-/*****----- Mode Switcher -----*****/
-mode-switcher{
-    enabled:                     true;
-    spacing:                     50px;
-    background-color:            transparent;
-    text-color:                  @fallout;
-    
-}
-button {
-    padding:                     8px;
-    margin:                      20px;
-    border-radius:               8px;
-    background-color:            orange / 20%;
-    text-color:                  inherit;
-    cursor:                      pointer;
-}
-button selected {
-    background-color:            orange / 40%;
-    text-color:                  @fallout;
-}
-
 /*****----- Listview -----*****/
 listview {
     enabled:                     true;
-    columns:                     2;
-    lines:                       8;
+    columns:                     5;
+    lines:                       2;
     cycle:                       false;
     dynamic:                     true;
     scrollbar:                   false;
@@ -133,7 +103,7 @@ listview {
 element {
     enabled:                     true;
     spacing:                     0px;
-    margin:                      2px;
+    margin:                      4px;
     padding:                     4px;
     border:                      0px solid;
     border-radius:               0px;
@@ -141,6 +111,7 @@ element {
     background-color:            transparent;
     text-color:                  @fallout;
     cursor:                      pointer;
+    orientation:                 vertical;
 }
 
 element selected.normal {
@@ -183,9 +154,9 @@ element-icon {
     enabled:                     true;
     background-color:            transparent;
     text-color:                  inherit;
-    size:                        32px;
+    size:                        384px;
     cursor:                      inherit;
-    padding:                     0px;
+    padding:                     4px;
     margin:                      4px;
 }
 
@@ -193,8 +164,8 @@ element-text {
     background-color:            transparent;
     text-color:                  inherit;
     cursor:                      inherit;
-    vertical-align:              0.5;
-    horizontal-align:            0.0;
+    vertical-align:              1.0;
+    horizontal-align:            0.5;
 }
 
 /*****----- Message -----*****/
@@ -207,7 +178,7 @@ textbox {
     border-radius:               10px;
     background-color:            inherit;
     text-color:                  @fallout;
-    vertical-align:              0.5;
+    vertical-align:              0.0;
     horizontal-align:            0.0;
 }
 error-message {

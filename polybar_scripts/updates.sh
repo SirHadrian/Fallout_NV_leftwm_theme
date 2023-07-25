@@ -1,28 +1,15 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 
 run() {
-	sleep 1
-	if ! updates_arch="$(checkupdates 2>/dev/null | wc -l)"; then
-		updates_arch=0
-	fi
 
-	#if ! updates_aur=$(yay -Qum 2> /dev/null | wc -l); then
-	if ! updates_aur="$(paru -Qum 2>/dev/null | wc -l)"; then
-		updates_aur=0
-	fi
+	updates="$(dnf check-update --quiet | wc -l)"
 
-	((updates = updates_arch + updates_aur))
-
-	if [ "$updates" -gt 0 ]; then
-		printf "%s" "$updates"
-	else
-		printf "%s" "0"
-	fi
+	[[ $updates -gt 0 ]] && ((updates = updates - 1))
+	printf "%s" "$updates"
 }
 
 update_system() {
-	# Use aur helper
-	paru -Syu
+	sudo dnf upgrade
 	# After update
 	printf "\n"
 	printf "==========================================\n"
@@ -34,7 +21,7 @@ update_system() {
 
 click() {
 	# print updates
-	checkupdates
+	dnf check-update
 	# Ask for confirmation
 	read -rp "Update the system? (y/N)" answer
 	do_update=${answer:-N}

@@ -1,16 +1,29 @@
 #!/usr/bin/bash
 
+SCRIPTPATH="$(cd "$(dirname "$0")" || exit && pwd -P)"
+
 # Pywal
 # -R restores the last colorscheme that was in use.
-wal -R
+# wal -R
+
+# Restore wallpaper
+feh --bg-fill "$SCRIPTPATH/wallpapers/background.jpg"
+
+# Kill dunst, for some reason it doesn't load the config at startup
+kill "$(pgrep -x 'dunst')" &>/dev/null
+# Wait for dunst to close
+while pgrep -x 'dunst' &>/dev/null; do sleep 1; done
 
 # Start user programs
 declare -a launch_programs=(
+
+	# https://github.com/dccsillag/picom | git clone -b implement-window-animations https://github.com/dccsillag/picom.git | Animations branch
 	"picom --animations --experimental-backend --config $SCRIPTPATH/configs/picom.conf"
-	"optimus-manager-qt"
+	# "optimus-manager-qt"
 	"unclutter"
 	"greenclip daemon"
 	"dunst -conf $SCRIPTPATH/configs/dunstrc"
+
 )
 
 for item in "${launch_programs[@]}"; do

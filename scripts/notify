@@ -1,0 +1,5 @@
+#!/usr/bin/bash
+
+NOTIFICATION_ICON="$HOME/.config/leftwm/themes/current/scripts/notification.jpg"
+
+dunstify --raw_icon="$NOTIFICATION_ICON" "$1"

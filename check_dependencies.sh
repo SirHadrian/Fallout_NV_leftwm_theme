@@ -8,7 +8,7 @@ source "$SCRIPTDIR"/colors.sh
 # Dependencies
 
 # Without those packages the theme may not work at all
-hard_dependencies=(
+declare -a hard_dependencies=(
 	"leftwm"
 	"polybar"
 	"rofi"
@@ -21,7 +21,7 @@ hard_dependencies=(
 )
 
 # Without those packages the theme may work but with some broken functionality
-solft_dependencies=(
+declare -a solft_dependencies=(
 	"feh"
 	"wal"
 	"bluetoothctl"
@@ -34,7 +34,7 @@ solft_dependencies=(
 )
 
 # Can be safely ignored
-optional_dependencies=(
+declare -a optional_dependencies=(
 	"cmus"
 	"ffmpeg"
 	"redshift"
@@ -52,6 +52,17 @@ optional_dependencies=(
 	"lxappearance"
 	"gthumb"
 	"nvidia-prime"
+	"ncdu"
+	"ranger"
+	"figlet"
+	"zoxide"
+	"mprocs"
+	"simple-http-server"
+	"gitui"
+	"mc"
+	"entr"
+	"fzf"
+	"gwenview"
  	"ncdu"
 )
 
@@ -69,7 +80,6 @@ for item in "${hard_dependencies[@]}"; do
 	fi
 done
 
-
 printf "\n${BWhite}%s" "=================================="
 printf "\n%s" "= Check Soft Dependencies        ="
 printf "\n%s${Color_Off}" "=================================="
@@ -83,7 +93,6 @@ for item in "${solft_dependencies[@]}"; do
 		printf "${BRed}%s${Color_Off}\n" "Missing.."
 	fi
 done
-
 
 printf "\n${BWhite}%s" "=================================="
 printf "\n%s" "= Check Optional Dependencies    ="
@@ -99,11 +108,4 @@ for item in "${optional_dependencies[@]}"; do
 	fi
 done
 
-
-
-
-
-
-
-
-printf "\n%s\n" "Tip: use pacman -F <command> to find the package the command is from"
+printf "\n%s\n" "Tip: use dnf provides <command> to find the package the command is from"
