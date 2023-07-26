@@ -2,14 +2,13 @@
 
 run() {
 
-	updates="$(dnf check-update --quiet | wc -l)"
+	updates="$(checkupdates | wc -l)"
 
-	[[ $updates -gt 0 ]] && ((updates = updates - 1))
 	printf "%s" "$updates"
 }
 
 update_system() {
-	sudo dnf upgrade
+	paru -Syu
 	# After update
 	printf "\n"
 	printf "==========================================\n"
@@ -21,7 +20,7 @@ update_system() {
 
 click() {
 	# print updates
-	dnf check-update
+	checkupdates
 	# Ask for confirmation
 	read -rp "Update the system? (y/N)" answer
 	do_update=${answer:-N}
