@@ -16,7 +16,7 @@ declare -a hard_dependencies=(
 	"greenclip"
 	"dunst"
 	"nmcli"
-	"pamixer"
+	"pulsemixer"
 	"alacritty"
 )
 
@@ -63,8 +63,8 @@ declare -a optional_dependencies=(
 	"entr"
 	"fzf"
 	"gwenview"
- 	"ncdu"
- 	"btm"
+	"ncdu"
+	"btm"
 )
 
 printf "\n${BWhite}%s" "=================================="
