@@ -50,7 +50,7 @@ if status is-interactive
     # Neovide
     alias nv 'neovide --multigrid'
     # Neovim
-    alias v 'nvim .'
+    alias v 'nvim'
 
     # Animated background
     alias animvid-gpu 'prime-run xwinwrap -g 1920x1080 -ov -ni -s -nf -un -fs -b -- mpv --hwdec=vdpau --vo=gpu -wid WID --loop --no-border --no-config --no-window-dragging --no-input-default-bindings --no-osd-bar --no-sub --no-audio'

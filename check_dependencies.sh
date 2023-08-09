@@ -17,6 +17,7 @@ declare -a hard_dependencies=(
 	"dunst"
 	"nmcli"
 	"pulsemixer"
+	"pamixer"
 	"alacritty"
 )
 
