@@ -7,7 +7,7 @@ source "$SCRIPTDIR"/colors.sh
 
 # Dependencies
 
-# Without those packages the theme may not work at all
+# Without those base packages the theme may not work at all
 declare -a hard_dependencies=(
 	"leftwm"
 	"polybar"
@@ -23,22 +23,22 @@ declare -a hard_dependencies=(
 
 # Without those packages the theme may work but with some broken functionality
 declare -a solft_dependencies=(
-	"feh"
-	"wal"
+	"feh" # wallpaper changer
+	"wal" # colorschemes
 	"bluetoothctl"
-	"xlock"
-	"light"
-	"amixer"
-	"unclutter"
+	"xlock" # screen lock screen
+	"light" # change backlight
+	# "amixer"
+	"unclutter" # Hide mouse
 	"scrot"
-	"optimus-manager-qt"
+	"optimus-manager-qt" # nvidia helper
 )
 
 # Can be safely ignored
 declare -a optional_dependencies=(
-	"cmus"
+	"cmus" # music
 	"ffmpeg"
-	"redshift"
+	"redshift" # Nightlight
 	"rg"
 	"exa"
 	"procs"
@@ -46,7 +46,7 @@ declare -a optional_dependencies=(
 	"tree"
 	"bat"
 	"pavucontrol"
-	"qpwgraph"
+	"qpwgraph" # Pipewire gui controll
 	"fd"
 	"sddm"
 	"qt5ct"
@@ -54,13 +54,13 @@ declare -a optional_dependencies=(
 	"gthumb"
 	"nvidia-prime"
 	"ncdu"
-	"ranger"
+	"ranger" # filemanager
 	"figlet"
-	"zoxide"
+	"zoxide" # based
 	"mprocs"
 	"simple-http-server"
-	"gitui"
-	"mc"
+	"gitui" # git tui helper
+	"mc"    # filemanager
 	"entr"
 	"fzf"
 	"gwenview"
