@@ -37,7 +37,10 @@ fi
 CON_SSID="$(printf "%s" "$RESULT" | awk '{print $1}')"
 [[ -z "$CON_SSID" ]] && exit 0
 
-if ! nmcli con up "$CON_SSID"; then
+if ! nmcli connection up "$CON_SSID"; then
+	# Delete existing connection.
+	nmcli connection delete "$CON_SSID"
+
 	PASSWD="$(rofi -dmenu -i -hover-select -me-select-entry '' -me-accept-entry MousePrimary -p "Passwd" -matching regex -config "$SCRIPTPATH/../configs/wifi_config.rasi" -location "$POSITION" -yoffset "$Y_OFFSET" -xoffset "$X_OFFSET" -font "$FONT")" &&
-		nmcli dev wifi con "$CON_SSID" password "$PASSWD"
+		nmcli device wifi connection "$CON_SSID" password "$PASSWD"
 fi
