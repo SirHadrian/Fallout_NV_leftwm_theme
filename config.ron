@@ -50,7 +50,7 @@
     disable_current_tag_swap: false,
     disable_tile_drag: false,
     disable_window_snap: true,
-    focus_behaviour: ClickTo, // Can be Sloppy(follows mouse), ClickTo(just on click), or Driven(no mouse focus)
+    focus_behaviour: Sloppy, // Can be Sloppy(follows mouse), ClickTo(just on click), or Driven(no mouse focus)
     focus_new_windows: true,
     sloppy_mouse_follows_focus: true,
     keybind: [
