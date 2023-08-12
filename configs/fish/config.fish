@@ -39,7 +39,7 @@ if status is-interactive
     alias lr 'exa -lR'
     alias ra 'ranger'
     alias cat 'bat'
-    alias ti 'date +"%H : %M" | figlet -f standard | lolcat -r'
+    alias ti 'date +"%H : %M" | figlet -f standard | lolcat'
     
     # Systemctl
     alias sc 'sudo systemctl'
