@@ -66,6 +66,10 @@ if status is-interactive
     # function prime-run --description "Run program using the nvidia GPU"
     #     __NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia __VK_LAYER_NV_optimus=NVIDIA_only $argv &> /dev/null &
     # end
+
+    function xc --description "Pipe to clipboard"
+        xclip -selection c
+    end
     
     function t --description "Send file to trash"
      if ! test -d ~/Trash
