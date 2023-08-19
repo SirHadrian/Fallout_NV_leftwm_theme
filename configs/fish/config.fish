@@ -48,10 +48,12 @@ if status is-interactive
     alias gu 'ssh-add ~/.ssh/id_ed25519 && gitui'
     
     # Neovide
-    alias nv 'neovide --multigrid'
+    # alias nv 'neovide --multigrid'
+    alias v 'neovide --maximized'
+    alias vv 'neovide --maximized .'
     # Neovim
-    alias v 'nvim'
-    alias vv 'nvim .'
+    # alias v 'nvim'
+    # alias vv 'nvim .'
 
     # Animated background
     alias animvid-gpu 'prime-run xwinwrap -g 1920x1080 -ov -ni -s -nf -un -fs -b -- mpv --hwdec=vdpau --vo=gpu -wid WID --loop --no-border --no-config --no-window-dragging --no-input-default-bindings --no-osd-bar --no-sub --no-audio'
