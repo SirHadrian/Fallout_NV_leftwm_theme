@@ -143,7 +143,7 @@ if status is-interactive
     
     # ========================================================================================
     
-    date +"%H : %M" | figlet -f standard | lolcat
+    #date +"%H : %M" | figlet -f standard | lolcat
     
     # Update PATH
     fish_add_path ~/.cargo/bin ~/.ghcup/bin ~/Downloads/AppImages
