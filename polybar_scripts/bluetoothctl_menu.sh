@@ -8,11 +8,11 @@ SCRIPTPATH="$(cd "$(dirname "$0")" || exit && pwd -P)"
 # 1 2 3
 # 8 0 4
 # 7 6 5
-POSITION=0
+POSITION=2
 #x-offset
-X_OFFSET=0
+X_OFFSET=-180
 #y-offset
-Y_OFFSET=50
+Y_OFFSET=53
 #font
 FONT="JetBrainsMono Nerd Font 12"
 #==========================================================
