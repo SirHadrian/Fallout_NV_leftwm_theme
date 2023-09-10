@@ -3,7 +3,7 @@ configuration {
 }
  
 * {
-    font:                        "CaskaydiaCove Nerd Font 12";
+    font:                        "CaskaydiaCove Nerd Font 13";
     fallout:                     #ffb642;
 }
 
@@ -12,7 +12,7 @@ window {
     transparency:                "real";
     fullscreen:                  false;
     width:                       20%;
-    height:                      40%;
+    height:                      45%;
 
     /* properties for all widgets */
     enabled:                     true;
@@ -94,7 +94,7 @@ element {
     enabled:                     true;
     spacing:                     0px;
     margin:                      2px;
-    padding:                     4px;
+    padding:                     8px;
     border:                      0px solid;
     border-radius:               0px;
     border-color:                @fallout;
