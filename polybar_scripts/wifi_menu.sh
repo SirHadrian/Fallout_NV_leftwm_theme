@@ -12,7 +12,7 @@ POSITION=3
 #x-offset
 X_OFFSET=-240
 #y-offset
-Y_OFFSET=55
+Y_OFFSET=53
 #fields to be displayed
 FIELDS=SSID,SECURITY,BARS
 #font
