@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-SCRIPTPATH="$(cd "$(dirname "$0")" || exit && pwd -P)"
-export SCRIPTPATH
+
+export SCRIPTPATH="$(cd "$(dirname "$0")" || exit && pwd -P)"
 
 #down the last running theme
 if [ -f "/tmp/leftwm-theme-down" ]; then
@@ -11,11 +11,6 @@ ln -s "$SCRIPTPATH"/down /tmp/leftwm-theme-down
 
 #set the theme.ron config
 leftwm-command "LoadTheme $SCRIPTPATH/theme.ron"
-
-#set background
-if [ -x "$(command -v feh)" ]; then
-	feh --bg-scale "$SCRIPTPATH"/background.jpg
-fi
 
 # Load user programs
 source "$SCRIPTPATH"/user_up
