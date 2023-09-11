@@ -86,10 +86,11 @@ listview {
 }
 
 scrollbar {
-    handle-width:                4px ;
+    handle-width:                2px ;
     handle-color:                @fallout;
     border-radius:               0px;
     background-color:            @transparent;
+    padding:                     4px;
 }
 
 element {

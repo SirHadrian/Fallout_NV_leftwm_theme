@@ -90,6 +90,7 @@ scrollbar {
     handle-color:                @fallout;
     border-radius:               0px;
     background-color:            @transparent;
+    padding:                     4px;
 }
 
 element {
