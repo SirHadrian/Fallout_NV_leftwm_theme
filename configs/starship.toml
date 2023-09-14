@@ -8,10 +8,10 @@
 format = '$all'
  
 # Wait 10 milliseconds for starship to check files under the current directory.
-scan_timeout = 10
+scan_timeout = 60
 
 # Allow commands to execute longer
-command_timeout = 30
+command_timeout = 100
 
 # Disable the blank line at the start of the prompt
 add_newline = false
