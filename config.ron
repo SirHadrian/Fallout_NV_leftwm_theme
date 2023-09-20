@@ -38,6 +38,7 @@
     ],
     window_rules: [
         ( window_title: "OpenGL Template", spawn_floating: true ),
+        ( window_class: "gwenview", spawn_floating: false),
         ( window_title: "Joplin", spawn_on_tag: 4),
         ( window_title: "Mozilla Firefox", spawn_on_tag: 1),
         ( window_class: "Steam", spawn_on_tag: 5),
