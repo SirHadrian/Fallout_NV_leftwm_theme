@@ -37,7 +37,7 @@ if status is-interactive
     alias l 'exa -l'
     alias la 'exa -la'
     alias lr 'exa -lR'
-    alias ra 'ranger'
+    # alias ra 'ranger'
     alias cat 'bat'
     alias ti 'date +"%H : %M" | figlet -f standard | lolcat'
     
@@ -132,22 +132,37 @@ if status is-interactive
             commandline -rb $result
         end
     end
-    
+
+    function ra --description "Ranger change dir"
+
+        set tempfile '/tmp/chosendir'                                                  
+        ranger --choosedir=$tempfile (pwd)                                    
+
+        if test -f $tempfile                                                           
+            if [ (cat $tempfile) != (pwd) ]                                            
+                cd (cat $tempfile)                                                       
+            end                                                                        
+        end                                                                            
+
+        rm -f $tempfile                                                                
+
+    end
+
     # ========================================================================================
-    
+
     # KEYBINDINGS
-    
+
     # bind \cp 'cmus'
     # bind \ch 'htop'
     # bind \ee 'nvim'
-    
+
     # ========================================================================================
-    
+
     #date +"%H : %M" | figlet -f standard | lolcat
-    
+
     # Update PATH
     fish_add_path ~/.cargo/bin ~/.ghcup/bin ~/Downloads/AppImages
-    
+
     # Init zoxide (cd)
     zoxide init fish | source
     # Init starship prompt (must be last)
