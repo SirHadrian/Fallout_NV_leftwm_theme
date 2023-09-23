@@ -70,3 +70,6 @@ function makedir {
 
 # Zoxide
 eval "$(zoxide init bash)"
+
+# Starship prompt
+eval "$(starship init bash)"
