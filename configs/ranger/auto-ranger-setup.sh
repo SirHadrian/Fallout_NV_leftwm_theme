@@ -57,9 +57,12 @@ install_ranger() {
 	# Install dependecy globaly with python -m pip install Pillow
 	git clone https://github.com/marianosimone/epub-thumbnailer.git && sudo python epub-thumbnailer/install.py install && rm -rf epub-thumbnailer
 
-	# Ranger icons
-	git clone https://github.com/alexanderjeurissen/ranger_devicons ~/.config/ranger/plugins/ranger_devicons
+	# Ranger icons plugin
+	git clone https://github.com/alexanderjeurissen/ranger_devicons.git ~/.config/ranger/plugins/ranger_devicons
 	echo "default_linemode devicons" >>"$CONFIGDIR"/rc.conf
+
+    # Ranger zoxide plugin
+    git clone https://github.com/jchook/ranger-zoxide.git ~/.config/ranger/plugins/zoxide
 
 }
 
