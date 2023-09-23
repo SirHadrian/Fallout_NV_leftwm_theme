@@ -5,7 +5,7 @@ install_ranger() {
 
 	[[ ! -d $CONFIGDIR ]] && mkdir -p "$CONFIGDIR"
 
-	cp rc.conf rifle.conf scope.sh "$CONFIGDIR"
+	cp -rv colorschemes rc.conf rifle.conf scope.sh "$CONFIGDIR"
 
 	if [ -f /etc/os-release ]; then
 		# freedesktop.org and systemd
