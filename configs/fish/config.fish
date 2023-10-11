@@ -52,8 +52,8 @@ if status is-interactive
     alias v 'neovide --maximized'
     alias vv 'neovide --maximized .'
     # Neovim
-    # alias v 'nvim'
-    # alias vv 'nvim .'
+    alias nv 'nvim'
+    alias nvv 'nvim .'
 
     # Animated background
     alias animvid-gpu 'prime-run xwinwrap -g 1920x1080 -ov -ni -s -nf -un -fs -b -- mpv --hwdec=vdpau --vo=gpu -wid WID --loop --no-border --no-config --no-window-dragging --no-input-default-bindings --no-osd-bar --no-sub --no-audio'
@@ -62,7 +62,7 @@ if status is-interactive
     alias lob 'lobster --rofi -i'
 
     # Brightness
-    alias br 'ligth' 
+    alias br 'light' 
 
     # Bluetoothctl
     alias bl 'bluetoothctl'
