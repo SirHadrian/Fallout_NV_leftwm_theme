@@ -60,6 +60,12 @@ if status is-interactive
 
     # Lobster movies
     alias lob 'lobster --rofi -i'
+
+    # Brightness
+    alias br 'ligth' 
+
+    # Bluetoothctl
+    alias bl 'bluetoothctl'
     
     # ========================================================================================
     
