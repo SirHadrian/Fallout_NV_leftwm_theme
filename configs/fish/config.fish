@@ -62,7 +62,7 @@ if status is-interactive
     alias lob 'lobster --rofi -i'
 
     # Brightness
-    alias br 'light' 
+    alias b 'light' 
 
     # Bluetoothctl
     alias bl 'bluetoothctl'
