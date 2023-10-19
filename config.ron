@@ -78,7 +78,9 @@
         (command: Execute, value: "~/.config/leftwm/themes/current/scripts/rofisearch", modifier: ["modkey"], key: "v"),
         (command: Execute, value: "~/.config/leftwm/themes/current/scripts/screenshot_full", modifier: ["modkey"], key: "p"),
         (command: Execute, value: "~/.config/leftwm/themes/current/scripts/screenshot_area", modifier: ["modkey", "Shift"], key: "p"),
-        (command: Execute, value: "~/.config/leftwm/themes/current/polybar_scripts/bluetoothctl_menu.sh --click", modifier: ["modkey"], key: "b"),
+        (command: Execute, value: "~/.config/leftwm/themes/current/scripts/wallpaper --open", modifier: ["modkey" ], key: "b"),
+        (command: Execute, value: "~/.config/leftwm/themes/current/scripts/wallpaper --next", modifier: ["modkey" ], key: "n"),
+        (command: Execute, value: "~/.config/leftwm/themes/current/polybar_scripts/bluetoothctl_menu.sh --click", modifier: ["modkey", "Shift"], key: "b"),
         
         // Apps
         (command: Execute, value: "alacritty", modifier: ["modkey"], key: "Return"),
