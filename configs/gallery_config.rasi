@@ -1,6 +1,6 @@
 /*****----- Configuration -----*****/
 configuration {
-	modi:                       "filebrowser";
+	modi:                       "filebrowser,drun";
     show-icons:                 true;
 
     filebrowser {
