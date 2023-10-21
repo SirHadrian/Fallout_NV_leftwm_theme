@@ -67,6 +67,9 @@ if status is-interactive
   # Bluetoothctl
   alias bl 'bluetoothctl'
 
+  # Lazygit
+  alias lg 'lazygit'
+
   # ========================================================================================
 
   # FUNCTIONS
