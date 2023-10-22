@@ -17,8 +17,6 @@ if status is-interactive
   # alias automatically appends $argv, so that all parameters used with the alias are passed to the actual command.
 
   # Git
-  alias gp 'git push'
-  alias gcom 'git add . && git commit'
   alias gst 'git status'
   alias gcl 'git clone'
   alias glog 'git log --oneline --decorate --graph'
@@ -27,8 +25,8 @@ if status is-interactive
   alias noblackscreen 'xset s off; xset -dpms; xset s noblank'
 
   # HDMI monitor
-  alias start-HDMI 'xrandr --output HDMI-1-0 --mode 1366x768 --auto --right-of eDP-1 && sleep 2 && leftwm command SoftReload'
-  alias stop-HDMI 'xrandr --output HDMI-1-0 --off && sleep 2 && leftwm command SoftReload'
+  # alias start-HDMI 'xrandr --output HDMI-1-0 --mode 1366x768 --auto --right-of eDP-1 && sleep 2 && leftwm command SoftReload'
+  # alias stop-HDMI 'xrandr --output HDMI-1-0 --off && sleep 2 && leftwm command SoftReload'
 
   # Terminal
   alias .. 'cd ..'
