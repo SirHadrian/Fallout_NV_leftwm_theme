@@ -5,7 +5,16 @@
 # [┌───────────────────>](bold green)
 # [│](bold green)$directory$rust$package
 # [└─>](bold green) '''
-format = '$all'
+format = """
+$username\
+$directory\
+$time\
+$battery\
+$cmd_duration
+$jobs\
+$os\
+$character
+"""
  
 # Wait 10 milliseconds for starship to check files under the current directory.
 scan_timeout = 60
@@ -16,8 +25,123 @@ command_timeout = 100
 # Disable the blank line at the start of the prompt
 add_newline = false
 
-# Replace the '❯' symbol in the prompt with '➜'
-[character] # The name of the module we are configuring is 'character'
-success_symbol = '[λ](bold green)' # The 'success_symbol' segment is being set to '➜' with the color 'bold green'
-# success_symbol = '[](bold green)' # The 'success_symbol' segment is being set to '➜' with the color 'bold green'
-error_symbol = '[](bold red)'
+# # Replace the '❯' symbol in the prompt with '➜'
+# [character] # The name of the module we are configuring is 'character'
+# success_symbol = '[λ](bold green)' # The 'success_symbol' segment is being set to '➜' with the color 'bold green'
+# # success_symbol = '[](bold green)' # The 'success_symbol' segment is being set to '➜' with the color 'bold green'
+# error_symbol = '[](bold red)'
+
+[battery]
+full_symbol = ' '
+charging_symbol = '⚡️'
+discharging_symbol = ' '
+
+[jobs]
+style = 'bold blue'
+format = '[$symbol$number ]($style)'
+symbol = '+'
+number_threshold = 1
+symbol_threshold = 1
+disabled = false
+
+[[battery.display]] # 'bold red' style and discharging_symbol when capacity is between 0% and 10%
+threshold = 30
+style = 'bold red'
+
+[[battery.display]] # 'bold yellow' style and 💦 symbol when capacity is between 10% and 30%
+threshold = 70
+style = 'bold yellow'
+discharging_symbol = ' '
+# when capacity is over 30%, the battery indicator will not be displayed
+
+[[battery.display]] # 'bold yellow' style and 💦 symbol when capacity is between 10% and 30%
+threshold = 100
+style = 'bold green'
+discharging_symbol = ' '
+
+[character]
+success_symbol = "[λ](green bold)"
+error_symbol = "[λ](red bold)"
+
+[username]
+style_user = "green bold"
+style_root = "red bold"
+format = "[$user]($style) "
+disabled = false
+show_always = true
+
+[directory]
+truncate_to_repo = true
+style = 'bold cyan'
+read_only = '🔒'
+read_only_style = 'red'
+truncation_symbol = ''
+home_symbol = '~'
+truncation_length = 3
+format = '[$path | ]($style)[$read_only]($read_only_style)'
+
+[git_branch]
+truncation_length = 10
+truncation_symbol = ''
+
+[git_status]
+ahead = '⇡${count}'
+diverged = '⇕⇡${ahead_count}⇣${behind_count}'
+behind = '⇣${count}'
+staged = '[++\($count\)](green)'
+
+[time]
+disabled = false
+time_format = "%R" # Hour:Minute Format
+style = "bright-white"
+format = '[$time |]($style) '
+
+[cmd_duration]
+min_time = 500
+format = '[| $duration](bold purple)'
+show_milliseconds = false
+
+[os]
+format = '[$symbol](bold white)'
+disabled = false
+
+[os.symbols]
+Alpaquita = " "
+Alpine = " "
+Amazon = " "
+Android = " "
+Arch = " "
+Artix = " "
+CentOS = " "
+Debian = " "
+DragonFly = " "
+Emscripten = " "
+EndeavourOS = " "
+Fedora = " "
+FreeBSD = " "
+Garuda = "󰛓 "
+Gentoo = " "
+HardenedBSD = "󰞌 "
+Illumos = "󰈸 "
+Linux = " "
+Mabox = " "
+Macos = " "
+Manjaro = " "
+Mariner = " "
+MidnightBSD = " "
+Mint = " "
+NetBSD = " "
+NixOS = " "
+OpenBSD = "󰈺 "
+openSUSE = " "
+OracleLinux = "󰌷 "
+Pop = " "
+Raspbian = " "
+Redhat = " "
+RedHatEnterprise = " "
+Redox = "󰀘 "
+Solus = "󰠳 "
+SUSE = " "
+Ubuntu = " "
+Unknown = " "
+Windows = "󰍲 "
