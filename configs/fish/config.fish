@@ -7,9 +7,9 @@ if status is-interactive
   set -gx EDITOR nvim
 
   # Vi mode
-  fish_vi_key_bindings
+  # fish_vi_key_bindings
   # Emacs mode
-  #fish_default_key_bindings
+  fish_default_key_bindings
 
   # ========================================================================================
 
