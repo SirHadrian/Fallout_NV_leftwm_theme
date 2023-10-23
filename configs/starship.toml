@@ -39,7 +39,7 @@ format = '[ $output ](red bold)'
 
 [battery]
 full_symbol = ' '
-charging_symbol = '⚡️'
+charging_symbol = ' '
 discharging_symbol = ' '
 
 [jobs]
