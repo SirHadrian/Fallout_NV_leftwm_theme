@@ -35,7 +35,7 @@ if status is-interactive
   alias l 'exa -l'
   alias la 'exa -la'
   alias lr 'exa -lR'
-  # alias ra 'ranger'
+  alias r 'ranger'
   alias cat 'bat'
   alias ti 'date +"%H : %M" | figlet -f standard | lolcat'
 
