@@ -45,7 +45,7 @@ window:
   # Window opacity as a floating point number from `0.0` to `1.0`.
   # The value `0.0` is completely transparent and `1.0` is opaque.
   #opacity: 1.0
-  opacity: 0.1
+  opacity: 0.5
 
   # Window decorations
   #
@@ -375,7 +375,8 @@ schemes:
   ### Nord ###
   Nord: &Nord # Default colors
     primary:
-      background: "#2E3440"
+      # background: "#2E3440"
+      background: "#000000"
       foreground: "#D8DEE9"
 
     # Normal colors
