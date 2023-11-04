@@ -163,6 +163,7 @@ if status is-interactive
   bind \er 'ranger; commandline -f repaint'
   # bind \ch 'htop'
   bind \ee 'nvim; commandline -f repaint'
+  bind \ew 'firefox &>/dev/null &; commandline -f repaint'
 
   # ========================================================================================
 
