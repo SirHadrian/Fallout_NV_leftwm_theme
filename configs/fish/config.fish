@@ -159,9 +159,10 @@ if status is-interactive
 
   # KEYBINDINGS
 
-  # bind \cp 'cmus'
+  bind \ep 'cmus'
+  bind \er 'ranger'
   # bind \ch 'htop'
-  # bind \ee 'nvim'
+  bind \ee 'nvim'
 
   # ========================================================================================
 
