@@ -159,7 +159,7 @@ if status is-interactive
 
   # KEYBINDINGS
 
-  bind \ep 'cmus; commandline -f repaint'
+  # bind \ep 'cmus; commandline -f repaint'
   bind \er 'ranger; commandline -f repaint'
   # bind \ch 'htop'
   bind \ee 'nvim; commandline -f repaint'
