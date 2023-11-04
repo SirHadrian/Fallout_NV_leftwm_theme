@@ -159,11 +159,12 @@ if status is-interactive
 
   # KEYBINDINGS
 
-  # bind \ep 'cmus; commandline -f repaint'
+  bind \ep 'pulsemixer; commandline -f repaint'
+  bind \em 'cmus; commandline -f repaint'
   bind \er 'ranger; commandline -f repaint'
-  # bind \ch 'htop'
   bind \ee 'nvim; commandline -f repaint'
   bind \ew 'firefox &>/dev/null &; commandline -f repaint'
+  bind \ed 'dolphin &>/dev/null &; commandline -f repaint'
 
   # ========================================================================================
 
