@@ -38,6 +38,7 @@ if status is-interactive
   alias r 'ranger'
   alias cat 'bat'
   alias ti 'date +"%H : %M" | figlet -f standard | lolcat'
+  alias j 'jobs'
 
   # Systemctl
   alias sc 'sudo systemctl'
@@ -163,7 +164,8 @@ if status is-interactive
   bind \em 'cmus; commandline -f repaint'
   bind \er 'ranger; commandline -f repaint'
   bind \ee 'nvim; commandline -f repaint'
-  bind \ew 'firefox &>/dev/null &; commandline -f repaint'
+  bind \ew 'librewolf &>/dev/null &; commandline -f repaint'
+  bind \e2 'firefox &>/dev/null &; commandline -f repaint'
   bind \ed 'dolphin &>/dev/null &; commandline -f repaint'
 
   # ========================================================================================
