@@ -7,9 +7,9 @@ if status is-interactive
   set -gx EDITOR nvim
 
   # Vi mode
-  # fish_vi_key_bindings
+  fish_vi_key_bindings
   # Emacs mode
-  fish_default_key_bindings
+  # fish_default_key_bindings
 
   # ========================================================================================
 
@@ -160,13 +160,16 @@ if status is-interactive
 
   # KEYBINDINGS
 
-  bind \ep 'pulsemixer; commandline -f repaint'
-  bind \em 'cmus; commandline -f repaint'
-  bind \er 'ranger; commandline -f repaint'
-  bind \ee 'nvim; commandline -f repaint'
-  bind \ew 'librewolf &>/dev/null &; commandline -f repaint'
-  bind \e2 'firefox &>/dev/null &; commandline -f repaint'
-  bind \e3 'dolphin &>/dev/null &; commandline -f repaint'
+  bind --mode insert \ep 'pulsemixer; commandline -f repaint'
+  bind --mode insert \em 'cmus; commandline -f repaint'
+  bind --mode insert \er 'ranger; commandline -f repaint'
+  bind --mode insert \ee 'nvim; commandline -f repaint'
+  bind --mode insert \ew 'librewolf &>/dev/null &; commandline -f repaint'
+  bind --mode insert \e2 'firefox &>/dev/null &; commandline -f repaint'
+  bind --mode insert \e3 'dolphin &>/dev/null &; commandline -f repaint'
+  bind --mode insert --sets-mode default kj 'commandline -f repaint'
+  bind --mode insert --sets-mode default jj 'commandline -f repaint'
+  bind --mode insert --sets-mode default kk 'commandline -f repaint'
 
   # ========================================================================================
 
