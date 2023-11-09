@@ -166,7 +166,7 @@ if status is-interactive
   bind \ee 'nvim; commandline -f repaint'
   bind \ew 'librewolf &>/dev/null &; commandline -f repaint'
   bind \e2 'firefox &>/dev/null &; commandline -f repaint'
-  bind \ed 'dolphin &>/dev/null &; commandline -f repaint'
+  bind \e3 'dolphin &>/dev/null &; commandline -f repaint'
 
   # ========================================================================================
 
