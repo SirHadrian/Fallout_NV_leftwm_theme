@@ -171,6 +171,8 @@ if status is-interactive
   bind --mode insert --sets-mode default jj 'commandline -f repaint'
   bind --mode insert --sets-mode default kk 'commandline -f repaint'
 
+  bind --mode insert \cf accept-autosuggestion
+
   # ========================================================================================
 
   #date +"%H : %M" | figlet -f standard | lolcat
