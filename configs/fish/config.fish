@@ -166,7 +166,7 @@ if status is-interactive
   bind --mode insert \ee 'nvim; commandline -f repaint'
   bind --mode insert \e1 'librewolf &>/dev/null &; commandline -f repaint'
   bind --mode insert \e2 'firefox &>/dev/null &; commandline -f repaint'
-  bind --mode insert \e3 'dolphin &>/dev/null &; commandline -f repaint'
+  bind --mode insert \e3 'dolphin . &>/dev/null &; commandline -f repaint'
   bind --mode insert --sets-mode default kj 'commandline -f repaint'
   # bind --mode insert --sets-mode default jj 'commandline -f repaint'
   bind --mode insert --sets-mode default kk 'commandline -f repaint'
