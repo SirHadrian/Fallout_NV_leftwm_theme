@@ -17,7 +17,7 @@ while pgrep -x 'dunst' &>/dev/null; do sleep 1; done
 # Start user programs
 declare -a launch_programs=(
 	# https://github.com/dccsillag/picom
-    # git clone -b implement-window-animations https://github.com/dccsillag/picom.git - Animations branch
+  # git clone -b implement-window-animations https://github.com/dccsillag/picom.git - Animations branch
 	"picom --animations --experimental-backend --config $SCRIPTPATH/configs/picom.conf"
 	# "optimus-manager-qt"
 	"unclutter"
