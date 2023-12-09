@@ -8,11 +8,13 @@
 format = """
 $username\
 $directory\
-$time\
+$git_branch\
+$git_status\
 $battery\
+$time\
 $cmd_duration
-$jobs\
 $os\
+$jobs\
 $custom\
 $character
 """
@@ -84,7 +86,7 @@ read_only_style = 'red'
 truncation_symbol = ''
 home_symbol = '~'
 truncation_length = 3
-format = '[$path | ]($style)[$read_only]($read_only_style)'
+format = '[$path ❯ ]($style)[$read_only]($read_only_style)'
 
 [git_branch]
 truncation_length = 10
@@ -100,11 +102,11 @@ staged = '[++\($count\)](green)'
 disabled = false
 time_format = "%R" # Hour:Minute Format
 style = "bright-white"
-format = '[$time |]($style) '
+format = '[$time]($style) '
 
 [cmd_duration]
 min_time = 500
-format = '[| $duration](bold purple)'
+format = '[$duration](bold purple)'
 show_milliseconds = false
 
 [os]
