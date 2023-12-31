@@ -23,6 +23,7 @@ if status is-interactive
 
   # X11 settings
   alias noblackscreen 'xset s off; xset -dpms; xset s noblank'
+  alias sx 'startx ~/.xinitrc'
 
   # HDMI monitor
   # alias start-HDMI 'xrandr --output HDMI-1-0 --mode 1366x768 --auto --right-of eDP-1 && sleep 2 && leftwm command SoftReload'
@@ -56,9 +57,6 @@ if status is-interactive
 
   # Animated background
   alias animvid-gpu 'prime-run xwinwrap -g 1920x1080 -ov -ni -s -nf -un -fs -b -- mpv --hwdec=vdpau --vo=gpu -wid WID --loop --no-border --no-config --no-window-dragging --no-input-default-bindings --no-osd-bar --no-sub --no-audio'
-
-  # Lobster movies
-  alias lob 'lobster --rofi -i'
 
   # Brightness
   alias b 'light -S' 
@@ -164,9 +162,10 @@ if status is-interactive
   bind --mode insert \em 'cmus; commandline -f repaint'
   bind --mode insert \er 'ranger; commandline -f repaint'
   bind --mode insert \ee 'nvim; commandline -f repaint'
-  bind --mode insert \e1 'librewolf &>/dev/null &; commandline -f repaint'
-  bind --mode insert \e2 'firefox &>/dev/null &; commandline -f repaint'
-  bind --mode insert \e3 'dolphin . &>/dev/null &; commandline -f repaint'
+  # bind --mode insert \e1 'librewolf &>/dev/null &; commandline -f repaint'
+  bind --mode insert \ey 'flatpak run io.gitlab.librewolf-community &>/dev/null &; commandline -f repaint'
+  bind --mode insert \ew 'firefox &>/dev/null &; commandline -f repaint'
+  bind --mode insert \et 'dolphin . &>/dev/null &; commandline -f repaint'
   bind --mode insert --sets-mode default kj 'commandline -f repaint'
   # bind --mode insert --sets-mode default jj 'commandline -f repaint'
   bind --mode insert --sets-mode default kk 'commandline -f repaint'
