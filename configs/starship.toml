@@ -12,6 +12,7 @@ $git_branch\
 $git_status\
 $battery\
 $time\
+$python\
 $cmd_duration
 $os\
 $jobs\
@@ -33,6 +34,11 @@ add_newline = false
 # success_symbol = '[λ](bold green)' # The 'success_symbol' segment is being set to '➜' with the color 'bold green'
 # # success_symbol = '[](bold green)' # The 'success_symbol' segment is being set to '➜' with the color 'bold green'
 # error_symbol = '[](bold red)'
+
+[python]
+# Only use the `python3` binary to get the version.
+python_binary = 'python3'
+pyenv_version_name = true
 
 [custom.ranger]
 command = 'echo "$RANGER_LEVEL"' # shows output of command
