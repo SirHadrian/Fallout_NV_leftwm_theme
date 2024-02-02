@@ -2,24 +2,24 @@
 
 open()
 {
-  gwenview "$(cat ~/.wallpaper)"
+        gwenview "$(cat ~/.wallpaper)"
 }
 
 next()
 {
-  kill $(pstree -lp | grep -- wallpaper | sed "s/.*sleep(\([0-9]\+\)).*/\1/")
+        kill $(pstree -lp | grep -- wallpaper | sed "s/.*sleep(\([0-9]\+\)).*/\1/")
 }
 
 case "$1" in
---open)
-  open
-	;;
---next)
-  next
-	;;
-*)
-  exit 1
-	;;
+        --open)
+                open
+                ;;
+        --next)
+                next
+                ;;
+        *)
+                exit 1
+                ;;
 esac
 
 

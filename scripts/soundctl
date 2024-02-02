@@ -1,27 +1,27 @@
-#!/usr/bin/env bash
+#!/usr/bin/bash
 
 while [[ -n "$1" ]]; do
-	case "$1" in
-	-s | --set)
-		shift
-		pamixer --set-volume "$1"
-		;;
-	-i | --inc)
-		shift
-		pamixer --increase "$1"
-		;;
-	-d | --dec)
-		shift
-		pamixer --decrease "$1"
-		;;
-	-t | --toggle)
-		pamixer --toggle-mute
-		;;
-	*)
-		exit 1
-		;;
-	esac
-	shift
+        case "$1" in
+                -s | --set)
+                        shift
+                        pamixer --set-volume "$1"
+                        ;;
+                -i | --inc)
+                        shift
+                        pamixer --increase "$1"
+                        ;;
+                -d | --dec)
+                        shift
+                        pamixer --decrease "$1"
+                        ;;
+                -t | --toggle)
+                        pamixer --toggle-mute
+                        ;;
+                *)
+                        exit 1
+                        ;;
+        esac
+        shift
 done
 
 dunstify --icon=audio-volume-low -h string:x-canonical-private-synchronous:volume "       Volume        " -h int:value:"$(pamixer --get-volume)"

@@ -3,14 +3,12 @@
 
 # End user programs
 declare -a end_programs=(
-
-	"picom"
-	"unclutter"
-	"greenclip"
-	"dunst"
-	
+"picom"
+"unclutter"
+"greenclip"
+"dunst"
 )
 
 for item in "${end_programs[@]}"; do
-	pkill "$item"
+        pkill "$item"
 done

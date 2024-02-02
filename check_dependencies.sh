@@ -74,12 +74,12 @@ printf "\n%s${Color_Off}" "=================================="
 printf "\n\n"
 
 for item in "${hard_dependencies[@]}"; do
-  printf "${BWhite}%-20s      " "${item}"
-  if [[ -x "$(command -v "$item")" ]]; then
-    printf "${BGreen}%s${Color_Off}\n" "Ok.."
-  else
-    printf "${BRed}%s${Color_Off}\n" "Missing.."
-  fi
+        printf "${BWhite}%-20s      " "${item}"
+        if [[ -x "$(command -v "$item")" ]]; then
+                printf "${BGreen}%s${Color_Off}\n" "Ok.."
+        else
+                printf "${BRed}%s${Color_Off}\n" "Missing.."
+        fi
 done
 
 printf "\n${BWhite}%s" "=================================="
@@ -88,12 +88,12 @@ printf "\n%s${Color_Off}" "=================================="
 printf "\n\n"
 
 for item in "${solft_dependencies[@]}"; do
-  printf "${BWhite}%-20s      " "${item}"
-  if [[ -x "$(command -v "$item")" ]]; then
-    printf "${BGreen}%s${Color_Off}\n" "Ok.."
-  else
-    printf "${BRed}%s${Color_Off}\n" "Missing.."
-  fi
+        printf "${BWhite}%-20s      " "${item}"
+        if [[ -x "$(command -v "$item")" ]]; then
+                printf "${BGreen}%s${Color_Off}\n" "Ok.."
+        else
+                printf "${BRed}%s${Color_Off}\n" "Missing.."
+        fi
 done
 
 printf "\n${BWhite}%s" "=================================="
@@ -102,12 +102,12 @@ printf "\n%s${Color_Off}" "=================================="
 printf "\n\n"
 
 for item in "${optional_dependencies[@]}"; do
-  printf "${BWhite}%-20s      " "${item}"
-  if [[ -x "$(command -v "$item")" ]]; then
-    printf "${BGreen}%s${Color_Off}\n" "Ok.."
-  else
-    printf "${BRed}%s${Color_Off}\n" "Missing.."
-  fi
+        printf "${BWhite}%-20s      " "${item}"
+        if [[ -x "$(command -v "$item")" ]]; then
+                printf "${BGreen}%s${Color_Off}\n" "Ok.."
+        else
+                printf "${BRed}%s${Color_Off}\n" "Missing.."
+        fi
 done
 
 printf "\n%s\n" "Tip: use dnf provides <command> to find the package the command is from"

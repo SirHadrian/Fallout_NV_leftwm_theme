@@ -6,7 +6,7 @@
 
 # Restore wallpaper
 if [ -x "$(command -v feh)" ]; then
-    feh --bg-fill "$SCRIPTPATH/wallpapers/background.jpg"
+        feh --bg-fill "$SCRIPTPATH/wallpapers/background.jpg"
 fi
 
 # Kill dunst, it doesn't load the config on restart if the daemon is still running
@@ -16,17 +16,17 @@ while pgrep -x 'dunst' &>/dev/null; do sleep 1; done
 
 # Start user programs
 declare -a launch_programs=(
-	# https://github.com/dccsillag/picom
-  # git clone -b implement-window-animations https://github.com/dccsillag/picom.git - Animations branch
-	"picom --animations --experimental-backend --config $SCRIPTPATH/configs/picom.conf"
-	# "optimus-manager-qt"
-	"unclutter"
-	"greenclip daemon"
-	"dunst -conf $SCRIPTPATH/configs/dunstrc"
+# https://github.com/dccsillag/picom
+# git clone -b implement-window-animations https://github.com/dccsillag/picom.git - Animations branch
+"picom --animations --experimental-backend --config $SCRIPTPATH/configs/picom.conf"
+# "optimus-manager-qt"
+"unclutter"
+"greenclip daemon"
+"dunst -conf $SCRIPTPATH/configs/dunstrc"
 )
 
 for item in "${launch_programs[@]}"; do
-	if ! pgrep -u $UID -f -x "$item" &>/dev/null; then
-		$item &>/dev/null &
-	fi
+        if ! pgrep -u $UID -f -x "$item" &>/dev/null; then
+                $item &>/dev/null &
+        fi
 done

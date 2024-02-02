@@ -8,7 +8,7 @@ configuration {
         directories-first: true;
     }
 }
- 
+
 /*****----- Global Properties -----*****/
 * {
 //    font:                        "JetBrainsMono Nerd Font 12";

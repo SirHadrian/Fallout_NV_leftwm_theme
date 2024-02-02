@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/bash
 
 # Config
 #==========================================================
@@ -27,20 +27,20 @@ WIFI_STATUS="$(nmcli radio wifi)"
 RESULT="$(printf "%s\n%s" "$TOGGLE" "$LIST" | rofi -dmenu -i -hover-select -me-select-entry '' -me-accept-entry MousePrimary -p "Wi-Fi SSID" -matching regex -config "$SCRIPTPATH/../configs/wifi_config.rasi" -location "$POSITION" -yoffset "$Y_OFFSET" -xoffset "$X_OFFSET" -font "$FONT")"
 
 if [[ "$RESULT" == "Turn wifi off" ]]; then
-	nmcli radio wifi off
-	exit 0
+        nmcli radio wifi off
+        exit 0
 elif [[ "$RESULT" == "Turn wifi on" ]]; then
-	nmcli radio wifi on
-	exit 0
+        nmcli radio wifi on
+        exit 0
 fi
 
 CON_SSID="$(printf "%s" "$RESULT" | awk '{print $1}')"
 [[ -z "$CON_SSID" ]] && exit 0
 
 if ! nmcli connection up "$CON_SSID"; then
-	# Delete existing connection.
-	nmcli connection delete "$CON_SSID"
+        # Delete existing connection.
+        nmcli connection delete "$CON_SSID"
 
-	PASSWD="$(rofi -dmenu -i -hover-select -me-select-entry '' -me-accept-entry MousePrimary -p "Passwd" -matching regex -config "$SCRIPTPATH/../configs/wifi_config.rasi" -location "$POSITION" -yoffset "$Y_OFFSET" -xoffset "$X_OFFSET" -font "$FONT")" &&
-		nmcli device wifi connection "$CON_SSID" password "$PASSWD"
+        PASSWD="$(rofi -dmenu -i -hover-select -me-select-entry '' -me-accept-entry MousePrimary -p "Passwd" -matching regex -config "$SCRIPTPATH/../configs/wifi_config.rasi" -location "$POSITION" -yoffset "$Y_OFFSET" -xoffset "$X_OFFSET" -font "$FONT")" &&
+                nmcli device wifi connection "$CON_SSID" password "$PASSWD"
 fi

@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/bash
 
 SCRIPTPATH=$(cd "$(dirname "$0")" || exit && pwd -P)
 
