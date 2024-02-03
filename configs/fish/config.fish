@@ -61,22 +61,43 @@ if status is-interactive
         alias animvid-gpu 'prime-run xwinwrap -g 1920x1080 -ov -ni -s -nf -un -fs -b -- mpv --hwdec=vdpau --vo=gpu -wid WID --loop --no-border --no-config --no-window-dragging --no-input-default-bindings --no-osd-bar --no-sub --no-audio'
 
         # Brightness
-        # alias b 'light -S'
 
-        function kb --description "Keyboard lead control on/off"
-                if test $argv = "on"
+        function kl --description "Keyboard lead control"
+                if test -z $argv
+                        set -f led (brightnessctl --device="platform::kbd_backlight" get)
+                        if test $led = "1"
+                                brightnessctl --device="platform::kbd_backlight" set 0
+                        else
+                                brightnessctl --device="platform::kbd_backlight" set 1
+                        end
+                else if test $argv = "1"
                         brightnessctl --device="platform::kbd_backlight" set 1
-                else if test $argv = "off"
+                else if test $argv = "0"
                         brightnessctl --device="platform::kbd_backlight" set 0
                 end
         end
 
-        function b --description "Set brightness"
-                brightnessctl --device="amdgpu_bl1" set $argv
+        function br --description "Set brightness"
+                if test -z $argv
+                        brightnessctl get
+                else
+                        brightnessctl --device="amdgpu_bl1" set $argv%
+                end
         end
 
         # Bluetoothctl
-        alias bl 'bluetoothctl'
+
+        function bl --description "Bluetooth control"
+                if test $argv = "d"
+                        bluetoothctl disconnect
+                else if test $argv = "c"
+                        bluetoothctl connect 00:18:09:FE:CC:7F
+                else if test $argv = "1"
+                        bluetoothctl power on
+                else if test $argv = "0"
+                        bluetoothctl power off
+                end
+        end
 
         # Lazygit
         alias lg 'lazygit'
