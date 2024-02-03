@@ -7,7 +7,8 @@ open()
 
 next()
 {
-        kill "$(pstree -lp | grep -- wallpaper | sed "s/.*sleep(\([0-9]\+\)).*/\1/")"
+        # Do not quote | PID
+        kill $(pstree -lp | grep -- wallpaper | sed "s/.*sleep(\([0-9]\+\)).*/\1/")
 }
 
 case "$1" in

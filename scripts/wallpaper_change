@@ -1,7 +1,6 @@
 #!/usr/bin/bash
 
-usage()
-{
+usage(){
         echo "Execute a commnad n times"
         echo "-n | --time - duration in seconds"
         echo "-e | --exec - commnad to execute every n times"
