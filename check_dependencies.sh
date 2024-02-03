@@ -60,6 +60,7 @@ declare -a optional_dependencies=(
 "mprocs"
 "simple-http-server"
 "gitui" # git tui helper
+"lazygit" # git tui helper
 "mc"    # filemanager
 "entr"
 "fzf"
