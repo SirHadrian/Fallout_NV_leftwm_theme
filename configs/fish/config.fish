@@ -92,6 +92,8 @@ if status is-interactive
                         bluetoothctl disconnect
                 else if test $argv = "c"
                         bluetoothctl connect 00:18:09:FE:CC:7F
+                else if test $argv = "s"
+                        bluetoothctl show
                 else if test $argv = "1"
                         bluetoothctl power on
                 else if test $argv = "0"
