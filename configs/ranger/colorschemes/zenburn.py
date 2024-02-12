@@ -87,7 +87,9 @@ class Zenburn(ColorScheme):
                 fg = 223
             elif context.tab:
                 if context.good:
-                    bg = 180
+                    # bg = 180
+                    fg = 180
+                    attr |= reverse
             elif context.link:
                 fg = 116
 
