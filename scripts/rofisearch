@@ -1,44 +1,45 @@
 #!/usr/bin/bash
+set -e
 
 SCRIPTDIR="$(cd "$(dirname "$0")" || exit && pwd -P)"
 
 BROWSER="flatpak run io.gitlab.librewolf-community -- "
 
 declare -A URLS=(
-	["Google"]="https://www.google.com/search?q="
-	["Duckduckgo"]="https://www.duckduckgo.com/?q="
-	["Archwiki"]="https://wiki.archlinux.org/title/"
-	["Github"]="https://github.com/search?q="
-	["Stackoverflow"]="http://stackoverflow.com/search?q="
-	["Youtube"]="https://www.youtube.com/results?search_query="
-	["Yandex"]="https://yandex.ru/yandsearch?text="
-	["Askubuntu"]="http://askubuntu.com/search?q="
-	["Piratebay"]="https://thepiratebay.org/search/"
+["Google"]="https://www.google.com/search?q="
+["Duckduckgo"]="https://www.duckduckgo.com/?q="
+["Archwiki"]="https://wiki.archlinux.org/title/"
+["Github"]="https://github.com/search?q="
+["Stackoverflow"]="http://stackoverflow.com/search?q="
+["Youtube"]="https://www.youtube.com/results?search_query="
+["Yandex"]="https://yandex.ru/yandsearch?text="
+["Askubuntu"]="http://askubuntu.com/search?q="
+["Piratebay"]="https://thepiratebay.org/search/"
 )
 
 gen_list() {
-	for i in "${!URLS[@]}"; do
-		echo "$i"
-	done
+        for i in "${!URLS[@]}"; do
+                echo "$i"
+        done
 }
 
 main() {
-	site=$(gen_list | rofi -dmenu -i -hover-select -me-select-entry '' -me-accept-entry MousePrimary -config "$SCRIPTDIR"/config.rasi -matching regex -p "Search on")
+        site=$(gen_list | rofi -dmenu -i -hover-select -me-select-entry '' -me-accept-entry MousePrimary -config "$SCRIPTDIR"/config.rasi -matching regex -p "Search on")
 
-	if [[ -n "$site" ]]; then
-		query=$(rofi -dmenu -config "$SCRIPTDIR"/config.rasi -mathcing regex -p "$site")
+        if [[ -n "$site" ]]; then
+                query=$(rofi -dmenu -config "$SCRIPTDIR"/config.rasi -mathcing regex -p "$site")
 
-		if [[ -n "$query" ]]; then
-			url=${URLS[$site]}$query
-			$BROWSER "$url" &>/dev/null &
-		else
-			exit 1
-		fi
-	else
-		exit 1
-	fi
+                if [[ -n "$query" ]]; then
+                        url=${URLS[$site]}$query
+                        $BROWSER "$url" &>/dev/null &
+                else
+                        exit 1
+                fi
+        else
+                exit 1
+        fi
 
-	exit 0
+        exit 0
 }
 
 main

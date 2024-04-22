@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -e
 
 timestamp="$(date +%d.%m.%Y"_"%H:%M:%S)"
 targetbase="$HOME/Pictures/screenshots"
