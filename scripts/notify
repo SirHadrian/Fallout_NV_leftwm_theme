@@ -1,4 +1,5 @@
 #!/usr/bin/bash
+set -e
 
 NOTIFICATION_ICON="$HOME/.config/leftwm/themes/current/scripts/notification.jpg"
 
