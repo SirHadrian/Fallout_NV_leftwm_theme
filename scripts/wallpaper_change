@@ -1,0 +1,53 @@
+#!/usr/bin/bash
+
+usage(){
+        echo "Execute a commnad n times"
+        echo "-n | --time - duration in seconds"
+        echo "-e | --exec - commnad to execute every n times"
+        echo "-h | --help - print usage"
+        return
+}
+
+sleep_time=
+artist=
+
+while [[ -n "$1" ]]
+do
+        case "$1" in
+                -n | --time)
+                        shift
+                        sleep_time=$1
+                        ;;
+                -e | --exec)
+                        shift
+                        artist="$1"
+                        ;;
+                -h | --help)
+                        usage
+                        exit
+                        ;;
+                *)
+                        usage >&2
+                        exit 1
+                        ;;
+        esac
+        shift
+done
+
+if [[ -z "$sleep_time" || -z "$artist" ]]
+then
+        usage >&2
+        exit 1
+fi
+
+while true
+do
+        # Get random image from artist dir
+        image="$(fd --type f --extension png --extension jpg --extension jpeg . $artist | shuf -n1)"
+        # Set background
+        feh --bg-max "$image"
+        # Write image path to file
+        echo "$image" > ~/.wallpaper
+        # Wait n seconds
+        sleep $sleep_time
+done

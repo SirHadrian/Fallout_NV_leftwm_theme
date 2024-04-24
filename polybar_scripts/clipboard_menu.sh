@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/bash
 
 SCRIPTPATH=$(cd "$(dirname "$0")" || exit && pwd -P)
 
@@ -8,9 +8,9 @@ SCRIPTPATH=$(cd "$(dirname "$0")" || exit && pwd -P)
 # 7 6 5
 POSITION=3
 #y-offset
-YOFF=55
+YOFF=53
 #x-offset
-XOFF=-80
+XOFF=-115
 #font
 FONT="JetBrainsMono Nerd Font 14"
 

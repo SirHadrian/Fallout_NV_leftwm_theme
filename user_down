@@ -1,16 +1,14 @@
 #!/usr/bin/env bash
-# Script won't run on soft reload, i think..
+# The script won't run on soft reload
 
 # End user programs
 declare -a end_programs=(
-
-	"picom"
-	"unclutter"
-	"greenclip"
-	"dunst"
-	
+"picom"
+"unclutter"
+"greenclip"
+"dunst"
 )
 
 for item in "${end_programs[@]}"; do
-	pkill "$item"
+        pkill "$item"
 done

@@ -1,6 +1,6 @@
 /*****----- Configuration -----*****/
 configuration {
-	modi:                       "filebrowser";
+	modi:                       "filebrowser,drun";
     show-icons:                 true;
 
     filebrowser {
@@ -8,7 +8,7 @@ configuration {
         directories-first: true;
     }
 }
- 
+
 /*****----- Global Properties -----*****/
 * {
 //    font:                        "JetBrainsMono Nerd Font 12";

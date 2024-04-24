@@ -1,11 +1,11 @@
-#!/usr/bin/env bash
+#!/usr/bin/bash
 set -e
 
 timestamp="$(date +%d.%m.%Y"_"%H:%M:%S)"
 targetbase="$HOME/Pictures/screenshots"
 mkdir -p "${targetbase}"
 [[ -d "${targetbase}" ]] || exit 1
-scrot --silent -s -f "${targetbase}/${timestamp}.png"
+scrot --silent --select --freeze "${targetbase}/${timestamp}.png"
 
 sleep 1
 dunstify --raw_icon="${targetbase}/${timestamp}.png" "Saved: " "Pictures/screenshots/${timestamp}.png"

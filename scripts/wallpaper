@@ -1,0 +1,27 @@
+#!/usr/bin/bash
+
+open()
+{
+        gwenview "$(cat ~/.wallpaper)"
+}
+
+next()
+{
+        # Do not quote | PID
+        kill $(pstree -lp | grep -- wallpaper | sed "s/.*sleep(\([0-9]\+\)).*/\1/")
+}
+
+case "$1" in
+        --open)
+                open
+                ;;
+        --next)
+                next
+                ;;
+        *)
+                exit 1
+                ;;
+esac
+
+
+

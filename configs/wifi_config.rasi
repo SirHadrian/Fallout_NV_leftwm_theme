@@ -3,7 +3,7 @@ configuration {
 }
  
 * {
-    font:                        "CaskaydiaCove Nerd Font 12";
+    font:                        "CaskaydiaCove Nerd Font 11";
     fallout:                     #ffb642;
 }
 
@@ -17,8 +17,9 @@ window {
     /* properties for all widgets */
     enabled:                     true;
     border-radius:               0px;
-    border:                      1px solid;
-    border-color:                @fallout;
+    border:                      2px solid;
+    //border-color:                @fallout;
+    border-color:                #805b21;
     cursor:                      "default";
     background-color:            black / 50%;
 }
@@ -85,10 +86,11 @@ listview {
 }
 
 scrollbar {
-    handle-width:                4px ;
+    handle-width:                2px ;
     handle-color:                @fallout;
     border-radius:               0px;
     background-color:            @transparent;
+    padding:                     4px;
 }
 
 element {

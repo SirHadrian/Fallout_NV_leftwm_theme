@@ -9,152 +9,155 @@
 
 #![enable(implicit_some)]
 (
-    modkey: "Mod4",
-    mousekey: "Mod4",
-    workspaces: [],
-    tags: [ " ", " ", " ", " ", " " ],
-    max_window_width: None,
-    layouts: [
-        Monocle,
-        MainAndVertStack,
-        MainAndHorizontalStack,
-        // MainAndDeck,
-        // GridHorizontal,
-        // EvenHorizontal,
-        // EvenVertical,
-        // Fibonacci,
-        // LeftMain,
-        // CenterMain,
-        CenterMainFluid,
-        RightWiderLeftStack,
-        LeftWiderRightStack,
-        CenterMainBalanced,
-    ],
-    layout_mode: Workspace,
-    insert_behavior: Bottom,
-    scratchpad: [
-        (name: "Alacritty", value: "alacritty", x: 150, y: 200, height: 700, width: 1620),
-        (name: "Pulsemixer", value: "alacritty -e pulsemixer", x: 150, y: 200, height: 700, width: 1620),
-    ],
-    window_rules: [
-        ( window_title: "OpenGL Template", spawn_floating: true ),
-        ( window_title: "Joplin", spawn_on_tag: 4),
-        ( window_title: "Mozilla Firefox", spawn_on_tag: 1),
-        ( window_class: "Steam", spawn_on_tag: 5),
-        ( window_class: "steam", spawn_on_tag: 5),
-        ( window_title: "Foliate", spawn_on_tag: 4),
-        ( window_class: "evince", spawn_on_tag: 4),
-        ( window_class: "okular", spawn_on_tag: 4),
-        ( window_title: "Fallout: New Vegas", spawn_floating: true ),
-    ],
-    disable_current_tag_swap: false,
-    disable_tile_drag: false,
-    disable_window_snap: true,
-    focus_behaviour: ClickTo, // Can be Sloppy(follows mouse), ClickTo(just on click), or Driven(no mouse focus)
-    focus_new_windows: true,
-    sloppy_mouse_follows_focus: true,
-    keybind: [
-    
-        // Session
-        (command: Execute, value: "loginctl kill-session $XDG_SESSION_ID", modifier: ["modkey", "Shift"], key: "x"),
-        
-        //(command: HardReload, modifier: ["modkey", "Shift"], key: "y"),
-        (command: SoftReload, modifier: ["modkey", "Shift"], key: "r"),
-        
-        // User scripts
-        (command: Execute, value: "~/.config/leftwm/themes/current/scripts/soundctl --set 100", modifier: ["modkey", "Control"], key: "9"),
-        (command: Execute, value: "~/.config/leftwm/themes/current/scripts/soundctl --set 0", modifier: ["modkey", "Control"], key: "0"),
-        (command: Execute, value: "~/.config/leftwm/themes/current/scripts/soundctl --set 50", modifier: ["modkey", "Control"], key: "m"),
-        (command: Execute, value: "~/.config/leftwm/themes/current/scripts/soundctl --toggle", modifier: [], key: "XF86XK_AudioMute"),
-        (command: Execute, value: "~/.config/leftwm/themes/current/scripts/soundctl --dec 5", modifier: [], key: "XF86XK_AudioLowerVolume"),
-        (command: Execute, value: "~/.config/leftwm/themes/current/scripts/soundctl --inc 5", modifier: [], key: "XF86XK_AudioRaiseVolume"),
-        (command: Execute, value: "~/.config/leftwm/themes/current/scripts/brightnessctl --set 0", modifier: ["modkey", "Alt"], key: "0"),
-        (command: Execute, value: "~/.config/leftwm/themes/current/scripts/brightnessctl --set 20", modifier: ["modkey", "Alt"], key: "2"),
-        (command: Execute, value: "~/.config/leftwm/themes/current/scripts/brightnessctl --set 100", modifier: ["modkey", "Alt"], key: "9"),
-        (command: Execute, value: "~/.config/leftwm/themes/current/scripts/brightnessctl --set 50", modifier: ["modkey", "Alt"], key: "m"),
-        (command: Execute, value: "~/.config/leftwm/themes/current/scripts/brightnessctl --inc 10", modifier: [], key: "XF86XK_MonBrightnessUp"),
-        (command: Execute, value: "~/.config/leftwm/themes/current/scripts/brightnessctl --dec 10", modifier: [], key: "XF86XK_MonBrightnessDown"),
-        (command: Execute, value: "~/.config/leftwm/themes/current/scripts/rofisearch", modifier: ["modkey"], key: "v"),
-        (command: Execute, value: "~/.config/leftwm/themes/current/scripts/screenshot_full", modifier: ["modkey"], key: "p"),
-        (command: Execute, value: "~/.config/leftwm/themes/current/scripts/screenshot_area", modifier: ["modkey", "Shift"], key: "p"),
-        (command: Execute, value: "~/.config/leftwm/themes/current/polybar_scripts/bluetoothctl_menu.sh --click", modifier: ["modkey"], key: "b"),
-        
-        // Apps
-        (command: Execute, value: "alacritty", modifier: ["modkey"], key: "Return"),
-        (command: Execute, value: "rofi -show drun -hover-select -me-select-entry '' -me-accept-entry MousePrimary -matching regex -config ~/.config/leftwm/themes/current/configs/config.rasi", modifier: ["modkey"], key: "r"),
-        (command: Execute, value: "xlock", modifier: ["modkey", "Alt"], key: "l"),
-        (command: Execute, value: "rofi -show filebrowser -hover-select -me-select-entry '' -me-accept-entry MousePrimary -matching regex -config ~/.config/leftwm/themes/current/configs/gallery_config.rasi", modifier: ["modkey"], key: "g"),
-        
-        // Windows
-        (command: CloseWindow, modifier: ["modkey"], key: "q"),
-        (command: MoveToLastWorkspace, modifier: ["modkey", "Shift"], key: "w"),
+ modkey: "Mod4",
+ mousekey: "Mod4",
+ workspaces: [],
+ tags: [ " ", " ", " ", " ", " " ],
+ max_window_width: None,
+ layouts: [
+ "Monocle",
+ "MainAndVertStack",
+ "MainAndHorizontalStack",
+ "// MainAndDeck",
+ "// GridHorizontal",
+ "// EvenHorizontal",
+ "// EvenVertical",
+ "// Fibonacci",
+ "// LeftMain",
+ "// CenterMain",
+ "CenterMainFluid",
+ "RightWiderLeftStack",
+ "LeftWiderRightStack",
+ "CenterMainBalanced",
+ ],
+ layout_mode: Workspace,
+ insert_behavior: Bottom,
+ scratchpad: [
+         (name: "Alacritty", value: "alacritty", x: 150, y: 200, height: 700, width: 1620),
+         (name: "Pulsemixer", value: "alacritty -e pulsemixer", x: 150, y: 200, height: 700, width: 1620),
+ ],
+ window_rules: [
+         ( window_title: "OpenGL Template", spawn_floating: true ),
+         ( window_class: "gwenview", spawn_floating: false),
+         ( window_title: "Joplin", spawn_on_tag: 4),
+         ( window_title: "Mozilla Firefox", spawn_on_tag: 1),
+         ( window_class: "Steam", spawn_on_tag: 5),
+         ( window_class: "steam", spawn_on_tag: 5),
+         ( window_title: "Foliate", spawn_on_tag: 4),
+         ( window_class: "evince", spawn_on_tag: 4),
+         ( window_class: "okular", spawn_on_tag: 4),
+         ( window_title: "Fallout: New Vegas", spawn_floating: true ),
+ ],
+        disable_current_tag_swap: false,
+        disable_tile_drag: false,
+        disable_window_snap: true,
+        focus_behaviour: ClickTo, // Can be Sloppy(follows mouse), ClickTo(just on click), or Driven(no mouse focus)
+        focus_new_windows: true,
+        sloppy_mouse_follows_focus: true,
+        keybind: [
 
-        (command: MoveWindowUp, modifier: ["modkey", "Shift"], key: "k"),
-        (command: MoveWindowDown, modifier: ["modkey", "Shift"], key: "j"),
-        (command: MoveWindowUp, modifier: ["modkey", "Shift"], key: "Up"),
-        (command: MoveWindowDown, modifier: ["modkey", "Shift"], key: "Down"),
-        
-        (command: FocusWindowUp, modifier: ["modkey"], key: "k"),
-        (command: FocusWindowDown, modifier: ["modkey"], key: "j"),
-        (command: FocusWindowUp, modifier: ["modkey"], key: "Up"),
-        (command: FocusWindowDown, modifier: ["modkey"], key: "Down"),
-        
-        (command: MoveWindowTop, modifier: ["modkey", "Shift"], key: "Return"),
-        
-        // Full screen window
-        (command: ToggleFullScreen, modifier: ["modkey", "Alt"], key: "f"),
-        
-        // Workspaces
-        (command: MoveWindowToNextWorkspace, modifier: ["modkey", "Shift"], key: "Right"),
-        (command: MoveWindowToPreviousWorkspace, modifier: ["modkey", "Shift"], key: "Left"),
-        (command: MoveWindowToNextWorkspace, modifier: ["modkey", "Shift"], key: "l"),
-        (command: MoveWindowToPreviousWorkspace, modifier: ["modkey", "Shift"], key: "h"),
-        
-        (command: FocusWorkspaceNext, modifier: ["modkey", "Control"], key: "l"),
-        (command: FocusWorkspacePrevious, modifier: ["modkey", "Control"], key: "h"),
-        (command: FocusWorkspaceNext, modifier: ["modkey", "Control"], key: "Right"),
-        (command: FocusWorkspacePrevious, modifier: ["modkey", "Control"], key: "Left"),
-        
-        // Floating windows
-        (command: FloatingToTile, modifier: ["modkey", "Shift"], key: "t"),
-        (command: TileToFloating, modifier: ["modkey", "Shift"], key: "f"),
-        (command: ToggleFloating, modifier: ["modkey", "Control"], key: "f"),
-        
-        // Layouts
-        (command: NextLayout, modifier: ["modkey", "Control"], key: "k"),
-        (command: PreviousLayout, modifier: ["modkey", "Control"], key: "j"),
-        (command: NextLayout, modifier: ["modkey", "Control"], key: "Up"),
-        (command: PreviousLayout, modifier: ["modkey", "Control"], key: "Down"),
-        (command: SetLayout, value: "Monocle", modifier: ["modkey", "Alt"], key: "h"),
-        
-        // Tags
-        (command: GotoTag, value: "1", modifier: ["modkey"], key: "1"),
-        (command: GotoTag, value: "2", modifier: ["modkey"], key: "2"),
-        (command: GotoTag, value: "3", modifier: ["modkey"], key: "3"),
-        (command: GotoTag, value: "4", modifier: ["modkey"], key: "4"),
-        (command: GotoTag, value: "5", modifier: ["modkey"], key: "5"),
-        (command: SwapTags, modifier: ["modkey"], key: "w"),
+                  // Session
+                  (command: Execute, value: "loginctl kill-session $XDG_SESSION_ID", modifier: ["modkey", "Shift"], key: "x"),
 
-        // Focus tags
-        (command: FocusNextTag, modifier: ["modkey"], key: "Right"),
-        (command: FocusPreviousTag, modifier: ["modkey"], key: "Left"),
-        (command: FocusNextTag, modifier: ["modkey"], key: "l"),
-        (command: FocusPreviousTag, modifier: ["modkey"], key: "h"),
-        
-        // Move windows to tags
-        (command: MoveToTag, value: "1", modifier: ["modkey", "Shift"], key: "1"),
-        (command: MoveToTag, value: "2", modifier: ["modkey", "Shift"], key: "2"),
-        (command: MoveToTag, value: "3", modifier: ["modkey", "Shift"], key: "3"),
-        (command: MoveToTag, value: "4", modifier: ["modkey", "Shift"], key: "4"),
-        (command: MoveToTag, value: "5", modifier: ["modkey", "Shift"], key: "5"),
+                  //(command: HardReload, modifier: ["modkey", "Shift"], key: "y"),
+                  (command: SoftReload, modifier: ["modkey", "Shift"], key: "r"),
 
-        // Tile window width
-        (command: IncreaseMainWidth, value: "5", modifier: ["modkey"], key: "a"),
-        (command: DecreaseMainWidth, value: "5", modifier: ["modkey"], key: "x"),
+                  // User scripts
+                  (command: Execute, value: "~/.config/leftwm/themes/current/scripts/soundctl --set 100", modifier: ["modkey", "Control"], key: "9"),
+                  (command: Execute, value: "~/.config/leftwm/themes/current/scripts/soundctl --set 0", modifier: ["modkey", "Control"], key: "0"),
+                  (command: Execute, value: "~/.config/leftwm/themes/current/scripts/soundctl --set 50", modifier: ["modkey", "Control"], key: "m"),
+                  (command: Execute, value: "~/.config/leftwm/themes/current/scripts/soundctl --toggle", modifier: [], key: "XF86XK_AudioMute"),
+                  (command: Execute, value: "~/.config/leftwm/themes/current/scripts/soundctl --dec 5", modifier: [], key: "XF86XK_AudioLowerVolume"),
+                  (command: Execute, value: "~/.config/leftwm/themes/current/scripts/soundctl --inc 5", modifier: [], key: "XF86XK_AudioRaiseVolume"),
+                  (command: Execute, value: "~/.config/leftwm/themes/current/scripts/brightnessctl --set 0", modifier: ["modkey", "Alt"], key: "0"),
+                  (command: Execute, value: "~/.config/leftwm/themes/current/scripts/brightnessctl --set 20", modifier: ["modkey", "Alt"], key: "2"),
+                  (command: Execute, value: "~/.config/leftwm/themes/current/scripts/brightnessctl --set 100", modifier: ["modkey", "Alt"], key: "9"),
+                  (command: Execute, value: "~/.config/leftwm/themes/current/scripts/brightnessctl --set 50", modifier: ["modkey", "Alt"], key: "m"),
+                  (command: Execute, value: "~/.config/leftwm/themes/current/scripts/brightnessctl --inc 10", modifier: [], key: "XF86XK_MonBrightnessUp"),
+                  (command: Execute, value: "~/.config/leftwm/themes/current/scripts/brightnessctl --dec 10", modifier: [], key: "XF86XK_MonBrightnessDown"),
+                  (command: Execute, value: "~/.config/leftwm/themes/current/scripts/rofisearch", modifier: ["modkey"], key: "v"),
+                  (command: Execute, value: "~/.config/leftwm/themes/current/scripts/screenshot_full", modifier: ["modkey"], key: "p"),
+                  (command: Execute, value: "~/.config/leftwm/themes/current/scripts/screenshot_area", modifier: ["modkey", "Shift"], key: "p"),
+                  (command: Execute, value: "~/.config/leftwm/themes/current/scripts/wallpaper --open", modifier: ["modkey" ], key: "b"),
+                  (command: Execute, value: "~/.config/leftwm/themes/current/scripts/wallpaper --next", modifier: ["modkey" ], key: "n"),
+                  (command: Execute, value: "~/.config/leftwm/themes/current/polybar_scripts/bluetoothctl_menu.sh --click", modifier: ["modkey", "Shift"], key: "b"),
 
-        // Scratchpads
-        (command: ToggleScratchPad, value: "Alacritty", modifier: ["modkey"], key: "s"),
-        (command: ToggleScratchPad, value: "Pulsemixer", modifier: ["modkey"], key: "m"),
-    ],
-    state_path: None,
-)
+                  // Apps
+                  (command: Execute, value: "alacritty", modifier: ["modkey"], key: "Return"),
+                  (command: Execute, value: "rofi -show drun -hover-select -me-select-entry '' -me-accept-entry MousePrimary -matching regex -config ~/.config/leftwm/themes/current/configs/config.rasi", modifier: ["modkey"], key: "r"),
+                  (command: Execute, value: "xlock", modifier: ["modkey", "Alt"], key: "l"),
+                  (command: Execute, value: "rofi -show filebrowser -hover-select -me-select-entry '' -me-accept-entry MousePrimary -matching regex -config ~/.config/leftwm/themes/current/configs/gallery_config.rasi", modifier: ["modkey"], key: "g"),
+
+                  // Windows
+                  (command: CloseWindow, modifier: ["modkey"], key: "q"),
+                  (command: MoveToLastWorkspace, modifier: ["modkey", "Shift"], key: "w"),
+
+                  (command: MoveWindowUp, modifier: ["modkey", "Shift"], key: "k"),
+                  (command: MoveWindowDown, modifier: ["modkey", "Shift"], key: "j"),
+                  (command: MoveWindowUp, modifier: ["modkey", "Shift"], key: "Up"),
+                  (command: MoveWindowDown, modifier: ["modkey", "Shift"], key: "Down"),
+
+                  (command: FocusWindowUp, modifier: ["modkey"], key: "k"),
+                  (command: FocusWindowDown, modifier: ["modkey"], key: "j"),
+                  (command: FocusWindowUp, modifier: ["modkey"], key: "Up"),
+                  (command: FocusWindowDown, modifier: ["modkey"], key: "Down"),
+
+                  (command: MoveWindowTop, modifier: ["modkey", "Shift"], key: "Return"),
+
+                  // Full screen window
+                  (command: ToggleFullScreen, modifier: ["modkey", "Alt"], key: "f"),
+
+                  // Workspaces
+                  (command: MoveWindowToNextWorkspace, modifier: ["modkey", "Shift"], key: "Right"),
+                  (command: MoveWindowToPreviousWorkspace, modifier: ["modkey", "Shift"], key: "Left"),
+                  (command: MoveWindowToNextWorkspace, modifier: ["modkey", "Shift"], key: "l"),
+                  (command: MoveWindowToPreviousWorkspace, modifier: ["modkey", "Shift"], key: "h"),
+
+                  (command: FocusWorkspaceNext, modifier: ["modkey", "Control"], key: "l"),
+                  (command: FocusWorkspacePrevious, modifier: ["modkey", "Control"], key: "h"),
+                  (command: FocusWorkspaceNext, modifier: ["modkey", "Control"], key: "Right"),
+                  (command: FocusWorkspacePrevious, modifier: ["modkey", "Control"], key: "Left"),
+
+                  // Floating windows
+                  (command: FloatingToTile, modifier: ["modkey", "Shift"], key: "t"),
+                  (command: TileToFloating, modifier: ["modkey", "Shift"], key: "f"),
+                  (command: ToggleFloating, modifier: ["modkey", "Control"], key: "f"),
+
+                  // Layouts
+                  (command: NextLayout, modifier: ["modkey", "Control"], key: "k"),
+                  (command: PreviousLayout, modifier: ["modkey", "Control"], key: "j"),
+                  (command: NextLayout, modifier: ["modkey", "Control"], key: "Up"),
+                  (command: PreviousLayout, modifier: ["modkey", "Control"], key: "Down"),
+                  (command: SetLayout, value: "Monocle", modifier: ["modkey", "Alt"], key: "h"),
+
+                  // Tags
+                  (command: GotoTag, value: "1", modifier: ["modkey"], key: "1"),
+                  (command: GotoTag, value: "2", modifier: ["modkey"], key: "2"),
+                  (command: GotoTag, value: "3", modifier: ["modkey"], key: "3"),
+                  (command: GotoTag, value: "4", modifier: ["modkey"], key: "4"),
+                  (command: GotoTag, value: "5", modifier: ["modkey"], key: "5"),
+                  (command: SwapTags, modifier: ["modkey"], key: "w"),
+
+                  // Focus tags
+                  (command: FocusNextTag, modifier: ["modkey"], key: "Right"),
+                  (command: FocusPreviousTag, modifier: ["modkey"], key: "Left"),
+                  (command: FocusNextTag, modifier: ["modkey"], key: "l"),
+                  (command: FocusPreviousTag, modifier: ["modkey"], key: "h"),
+
+                  // Move windows to tags
+                  (command: MoveToTag, value: "1", modifier: ["modkey", "Shift"], key: "1"),
+                  (command: MoveToTag, value: "2", modifier: ["modkey", "Shift"], key: "2"),
+                  (command: MoveToTag, value: "3", modifier: ["modkey", "Shift"], key: "3"),
+                  (command: MoveToTag, value: "4", modifier: ["modkey", "Shift"], key: "4"),
+                  (command: MoveToTag, value: "5", modifier: ["modkey", "Shift"], key: "5"),
+
+                  // Tile window width
+                  (command: IncreaseMainWidth, value: "5", modifier: ["modkey"], key: "a"),
+                  (command: DecreaseMainWidth, value: "5", modifier: ["modkey"], key: "x"),
+
+                  // Scratchpads
+                  (command: ToggleScratchPad, value: "Alacritty", modifier: ["modkey"], key: "s"),
+                  (command: ToggleScratchPad, value: "Pulsemixer", modifier: ["modkey"], key: "m"),
+                  ],
+                  state_path: None,
+                  )
